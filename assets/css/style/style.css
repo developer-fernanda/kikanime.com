@@ -1,0 +1,420 @@
+/***************************
+********* BODY *********
+***************************/
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #1B1B1B;
+}
+
+
+/***************************
+*******NAVS GERAL *********
+***************************/
+
+
+/* MENU HAMBURGUER */
+
+.navbar-toggler {
+    /* border: 2px solid #FCB040; */
+    border: none;
+}
+
+
+/* SPAN - MENU HAMBURGUER */
+
+.navbar-toggler-icon {
+    color: #FCB040;
+}
+
+
+/* COR DAS NAVS */
+
+#navSuperior {
+    background-color: #1B1B1B;
+    color: #FCB040;
+    height: 45px;
+}
+
+#navInferior {
+    background-color: #1B1B1B;
+    color: #FCB040;
+    margin-top: 60px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+
+
+/***************************
+*******NAV SUPERIOR*********
+***************************/
+
+
+/*NAV SUPERIOR - LOGO */
+
+.logo-kik {
+    height: 150px;
+    margin-top: -10px;
+    position: absolute;
+}
+
+
+/*NAV SUPERIOR - BOTÕES REDES SOCIAIS  */
+
+.btn-redes-sociais {
+    color: #FCB040;
+    background-color: #1B1B1B;
+    font-size: 20px;
+}
+
+.list-botoes {
+    margin-left: 150px;
+}
+
+
+/*NAV SUPERIOR - LOGIN E SAIR */
+
+.list-login {
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/*NAV SUPERIOR - LOGIN E SAIR - COR E ESTILO */
+
+.list-login>.list-inline-item>a {
+    text-decoration: none;
+    color: #FCB040;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/*NAV SUPERIOR - INPUT DE PESQUISA */
+
+#input-pesquisa>input {
+    background-color: #1B1B1B;
+    color: #FCB040;
+    border: solid 1px #FCB040;
+}
+
+
+/*NAV SUPERIOR - BOTÃO IR */
+
+.btn-ir {
+    color: #1B1B1B;
+    background-color: #FCB040;
+    margin-top: -4px;
+}
+
+
+/* NAV INFERIOR - MENU ITENS - ALINHAMENTO */
+
+#navList {
+    padding-left: 200px;
+}
+
+
+/***************************
+*******NAV INFERIOR*********
+***************************/
+
+
+/*NAV INFERIOR - MENU ITENS COM LINKS */
+
+#navList>li>a {
+    color: #FCB040;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#navList>li>a:hover {
+    color: white;
+    border-bottom: solid 2px white;
+}
+
+
+/*DROPDOWN- ITENS */
+
+.dropdown-menu,
+.dropdown-item {
+    color: #FCB040 !important;
+    background-color: #1B1B1B;
+}
+
+.dropdown-item:hover {
+    background-color: #FCB040;
+    color: #1B1B1B !important;
+}
+
+
+/***************************
+*****CAROUSEL PRINCIPAL*****
+***************************/
+
+
+/*CAROUSEL IMAGEM */
+
+.img-anime1 {
+    background: url(../../img/carousel/carousel1.png) no-repeat center center fixed;
+    height: 70vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.img-anime2 {
+    background: url(../../img/carousel/carousel2.png) no-repeat center center fixed;
+    height: 70vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.img-anime3 {
+    background: url(../../img/carousel/carousel3.png) no-repeat center center fixed;
+    height: 70vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/*CAROUSEL SETAS */
+
+.icones-carousel>.fas {
+    color: #1B1B1B;
+    font-size: 100px;
+}
+
+
+/*CAROUSEL H6 */
+
+.carousel-caption>h6 {
+    color: #FCB040;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+
+/***************************
+***********HOME*************
+***************************/
+
+
+/*TITULO CATEGORIAS*/
+
+#categorias {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #FCB040;
+    color: #1B1B1B;
+    padding: 10px;
+    font: bold;
+    font-size: 20px;
+}
+
+
+/*CONTEÚDO CATEGORIAS*/
+
+.categoriasBody {
+    color: white;
+}
+
+#colunaEsquerda {
+    margin-top: 10px;
+    border: 1px solid #FCB040;
+}
+
+
+/* CARDS CONTEÚDO*/
+
+.card-anime {
+    background-color: rgb(37, 35, 35);
+    color: white;
+}
+
+
+/* CARDS BOTÃO*/
+
+.btn-carrinho {
+    color: #1B1B1B;
+    background-color: #FCB040;
+    margin-top: 10px;
+}
+
+
+/****LOGIN DE CLIENTE***********
+*****CADASTRO DE CLIENTE********
+*****LOGIN DO ADMINISTRADOR***** 
+*****CADASTRO DE PRODUTO*******/
+
+
+/* LOGIN ADM*/
+
+#background-login-adm {
+    background: url(../../img/fundo/login-adm.png);
+    background-color: #1B1B1B;
+}
+
+
+/***BORDA E ESPAÇAMENTO*********
+*****LOGIN DE CLIENTE***********
+*****CADASTRO DE CLIENTE********
+*****LOGIN DO ADMINISTRADOR***** 
+*****CADASTRO DE PRODUTO*******/
+
+#form-login-cliente,
+#form-cadastro-cliente,
+#form-login-adm,
+#form-cadastro-produto {
+    margin-top: 40px;
+    border: 1px solid #FCB040;
+    padding: 70px;
+    /*AJUSTAR DEPOIS DE FAZER O FOOTER*/
+    margin-bottom: 50px;
+    background-color: #1B1B1B;
+}
+
+
+/****TITULO H6 ****************
+*****LOGIN DE CLIENTE***********
+*****CADASTRO DE CLIENTE********
+*****LOGIN DO ADMINISTRADOR***** 
+*****CADASTRO DE PRODUTO*******/
+
+#form-login-cliente>h6,
+#form-cadastro-cliente>h6,
+#form-login-adm>h6,
+#form-cadastro-produto>h6 {
+    color: #FCB040;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/****LABEL**********************
+*****LOGIN DE CLIENTE***********
+*****CADASTRO DE CLIENTE********
+*****LOGIN DO ADMINISTRADOR***** 
+*****CADASTRO DE PRODUTO*******/
+
+#form-login-cliente>.form-group>label,
+#form-cadastro-cliente>.form-group>label,
+#form-login-adm>.form-group>label,
+#form-cadastro-produto>.form-row>.form-group>label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    margin-top: 10px;
+}
+
+
+/* CADASTRO E LOGIN CLIENTE E ADM- INPUT*/
+
+
+/* #form-login-cliente>input,
+#form-cadastro-cliente>input {
+    background-color: #1B1B1B;
+    color: #FCB040;
+} */
+
+
+/****BOTÕES ENTRAR E VOLTAR****
+*****LOGIN DE CLIENTE***********
+*****CADASTRO DE CLIENTE********
+*****LOGIN DO ADMINISTRADOR***** 
+*****CADASTRO DE PRODUTO*******/
+
+.btn-voltar,
+.btn-entrar {
+    color: #1B1B1B !important;
+    background-color: #FCB040;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/*************************************
+********* ADM - LISTA DE PRODUTOS ****
+**************************************/
+
+
+/* CADASTRO DE PRODUTOS - FUNDO DE TELA*/
+
+#background-lista,
+#background-cadastro-adm {
+    background: url(../../img/fundo/fundo-cat.png);
+    background-color: #1B1B1B;
+}
+
+
+/* CADASTRO DE PRODUTOS - FUNDO*/
+
+#container-lista {
+    background-color: #1B1B1B;
+    margin-top: 50px;
+}
+
+
+/* CADASTRO DE PRODUTOS - TÍTULO E BOTÃO SAIR - ALINHAMENTO */
+
+#container-lista>.row>.col-md-12>.d-flex>h4,
+#container-lista>.row>.col-md-12>.d-flex>a {
+    color: #FCB040;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* CADASTRO DE PRODUTOS - BOTÃO SAIR*/
+
+.btn-sair {
+    color: #1B1B1B !important;
+    background-color: #FCB040;
+    text-decoration: none !important;
+}
+
+
+/* CADASTRO DE PRODUTOS - BOTÃO DE CADASTRO E DE ATUALIZAR*/
+
+#botoes-lista>a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    background-color: #FCB040;
+    color: #1B1B1B;
+    margin-left: 10px;
+    /*margin-right: 10px;*/
+}
+
+
+/* CADASTRO DE PRODUTOS - CADASTRO DE USUÁRIO*/
+
+.nome-adm {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* CADASTRO DE PRODUTOS - TABELA COM LISTA DE PRODUTOSS*/
+
+#table-lista {
+    border-top: 1px solid #FCB040;
+    border-bottom: 1px solid #FCB040;
+    color: #FCB040;
+}
+
+
+/* CADASTRO DE PRODUTOS - TABLE ALINHAMENTO*/
+
+.table {
+    margin-top: 30px !important;
+    margin-left: 30px;
+    margin-right: 30px;
+}
