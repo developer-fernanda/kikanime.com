@@ -67,6 +67,7 @@ body {
     background-color: #1B1B1B;
     font-size: 20px;
 }
+
 .btn-redes-sociais:hover {
     color: white;
 }
@@ -93,11 +94,10 @@ body {
     cursor: pointer;
 }
 
-
 .list-login>.list-inline-item>a:hover {
-   color:white;
-    text-transform: uppercase;
+    color: white;
 }
+
 
 /*NAV SUPERIOR - INPUT DE PESQUISA */
 
@@ -266,7 +266,6 @@ body {
 }
 
 
-
 /***BORDA E ESPAÇAMENTO*********
 *****LOGIN DE CLIENTE***********
 *****CADASTRO DE CLIENTE********
@@ -348,7 +347,6 @@ body {
     font-weight: bold;
 }
 
-
 .btn-voltar:hover,
 .btn-entrar:hover {
     color: #1B1B1B !important;
@@ -380,11 +378,11 @@ body {
 
 /* CADASTRO DE PRODUTOS - TÍTULO E BOTÃO SAIR - ALINHAMENTO */
 
-#container-lista>.row>.col-md-12>h4{
+#container-lista>.row>.col-md-12>h4 {
     color: #FCB040;
     margin-top: 70px;
     margin-bottom: 40px;
-    text-align:center;
+    text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -400,9 +398,10 @@ body {
 }
 
 #botoes-lista>a:hover {
-    background-color:white;
-    color:#1B1B1B;
+    background-color: white;
+    color: #1B1B1B;
 }
+
 
 /* CADASTRO DE PRODUTOS - CADASTRO DE USUÁRIO*/
 
@@ -410,6 +409,7 @@ body {
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 
 /****************************************
 *** TABELA - CADASTRO DE PRODUTOS *******
@@ -420,6 +420,8 @@ body {
     margin-left: 15px;
     margin-right: 15px;
 }
+
+
 /* CADASTRO DE PRODUTOS - TABELA COM LISTA DE PRODUTOS*/
 
 #table-cabecalho {
@@ -436,31 +438,35 @@ body {
 }
 
 #table-lista:hover {
-    background-color: #FCB040;
-    color: #1B1B1B;
+    background-color: rgb(37, 35, 35);
+    color: #FCB040;
 }
+
 
 /* CADASTRO DE PRODUTOS - BOTÕES TABELA*/
 
-.acao-lista>a{
-    background-color:#FCB040;
-    color:#1B1B1B;
-    text-decoration:nome;
-    margin-left:10px;
+.acao-lista>a,
+.acao-lista>button {
+    background-color: #FCB040;
+    color: #1B1B1B;
+    text-decoration: nome;
+    margin-left: 10px;
 }
 
-.acao-lista>a:hover{
-    background-color:white;
-    color:#1B1B1B;
+.acao-lista>a:hover,
+.acao-lista>button:hover {
+    background-color: white;
+    color: #1B1B1B;
 }
 
 
 /* PAINEL ADM -ALERT  */
 
-.alert-delete{
-    display:flex;
-    justify-content:center;
+.alert-delete {
+    display: flex;
+    justify-content: center;
 }
+
 
 /* TELA DE ERRO - ALINHAMENTO*/
 
@@ -471,40 +477,49 @@ body {
 
 /* PAINEL ADM - MODAL HEADER  */
 
-.modal-header{
-    color:#FCB040;
+.modal-header {
+    color: #FCB040;
     text-transform: uppercase;
-    margin:auto;
+    margin: auto;
 }
+
 
 /* PAINEL ADM - MODAL CONTENT  */
 
-.modal-content{
-background-color: rgb(37, 35, 35);
-color: white;
+.modal-content {
+    background-color: rgb(37, 35, 35);
+    color: white;
 }
+
 
 /* PAINEL ADM - BOTÃO MODAL  */
 
-.btn-deletar{
-    color:#1B1B1B;
-    background:#FCB040;
-    margin-right:10px;
-    text-decoration:none;
+
+/* PAINEL ADM - BOTÃO DELETAR  */
+
+.btn-deletar {
+    color: #1B1B1B;
+    background: #FCB040;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
-.btn-deletar:hover{
-    color:#1B1B1B;
+.btn-deletar:hover {
+    color: #1B1B1B;
 }
 
-.btn-sair{
-    color:white;
-    background:#1B1B1B;
-    margin-right:10px;
-    text-decoration:none;
-    border:1px solid white;
+
+/* PAINEL ADM - BOTÃO SAIR  */
+
+.btn-sair {
+    color: white;
+    background: #1B1B1B;
+    margin-right: 10px;
+    text-decoration: none;
+    border: 1px solid white;
 }
 
-.btn-cancelar:hover{
-    color:white;
+.btn-sair:hover {
+    color: white;
+    text-decoration: none;
 }

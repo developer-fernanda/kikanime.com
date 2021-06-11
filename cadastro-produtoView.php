@@ -45,7 +45,7 @@ include('logica-cadastroProduto.php');
                             <label for="txtsubCategoria_produto"> Sub Categoria </label>
                             <select class="form-control" name="txtsubCategoria_produto">
                                 <option value="Camiseta">Camiseta</option>
-                                <option value="Moletom">Moletam</option>
+                                <option value="Moletom">Moletom</option>
                                 <option value="Caneca">Caneca</option>
                                 <option value="Almofadas decorativas">Almofadas decorativas</option>
                             </select>

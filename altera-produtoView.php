@@ -25,7 +25,7 @@ $dado = selecionaProduto($conexao);
 
     <div id="background-cadastro-adm">
         <div class="container">
-            <form name="formcadastroProduto" method="post">
+            <form name="formcadastroProduto" method="post"  >
                 <div class="offset-lg-3 col-lg-6" id="form-cadastro-produto">
                     <h6>ALTERAÇÃO DE PRODUTO </h6>
                     <div class="form-row">
@@ -41,83 +41,48 @@ $dado = selecionaProduto($conexao);
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="txtcategoria_produto"> Categoria </label>
-                            <select class="form-control" name="txtcategoria_produto">
-                                <option value="Roupas">Roupas</option>
-                                <option value="Utensílios">Utensílios</option>
-                                <option value="decoração">Decoração</option>
-                            </select>
+                            <input type="text" class="form-control" name="txtcategoria_produto" value='<?php echo $dado['categoria_produto']; ?>'>
                          </div>
                         <div class="form-group col-md-6">
                             <label for="txtsubCategoria_produto"> Sub Categoria </label>
-                            <select class="form-control" name="txtsubCategoria_produto">
-                                <?php foreach ($dado as $test) { ?>
-                                <option value="<?php echo $test['id_produto']?>"><?php echo $test['nome_produto']?></option>
-                                <?php } ?>
-                            </select>
+                            <input type="text" class="form-control" name="txtsubCategoria_produto" value='<?php echo $dado['subCategoria_produto']; ?>'>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="txttamanho_produto"> Tamanho </label>
-                            <select class="form-control" name="txttamanho_produto">
-                                <option value="UN">UN</option>
-                                <option value="P">P</option>
-                                <option value="M">M</option>
-                                <option value="G">G</option>
-                                <option value="GG">GG</option>
-                            </select>
+                            <input type="text" class="form-control" name="txttamanho_produto" value='<?php echo $dado['tamanho_produto']; ?>'>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="txtcor_produto"> Cor </label>
-                            <select class="form-control" name="txtcor_produto">
-                                <option value="preto">Preto</option>
-                                <option value="branco">Branco</option>
-                                <option value="cinza">Cinza</option>
-                            </select>
+                            <input type="text" class="form-control" name="txtcor_produto" value='<?php echo $dado['cor_produto']; ?>'>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="txtquantidade_produto"> Quantidade </label>
-                            <select class="form-control" name="txtquantidade_produto">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                            <input type="text" class="form-control" name="txtquantidade_produto" value='<?php echo $dado['quantidade_produto']; ?>'>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for="txtpreco_produto"> Preço </label>
-                            <input type="text" class="form-control" name="txtpreco_produto" placeholder="Preço">
+                            <input type="text" class="form-control" name="txtpreco_produto" value='<?php echo $dado['preco_produto']; ?>'>
                         </div>
                         <div class="form-group col-md-9">
                             <label for="txtimagem_produto"> Adicionar Imagem</label>
-                            <input type="file" class="form-control" name="txtimagem_produto">
+                            <input type="file" class="form-control" name="txtimagem_produto" value='<?php echo $dado['imagem_produto']; ?>'>
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">
                         <a href="painel-admView.php" class="btn btn-voltar">VOLTAR</a>
-                        <button class="btn btn-entrar" type="submit" value="entrar">CADASTRAR</button>
+                        <button class="btn btn-entrar" type="submit" value="alterar">ALTERAR</button>
                     </div>
 
-                     <?php
+                    <?php
                     if ($_POST) {
-                        cadastrarProduto($conexao);
+                        alterarProduto($conexao);
                     }
+                    ?>
 
-                    if (isset($_GET['cadastro_sucesso'])) {
-                        if ($_GET['cadastro_sucesso'] == 1) {
-                            echo '<div class="alert alert-success text-center" role="alert" style="height: 60px; width: 350px; color:white;">
-                                    <i class="fas fa-leaf h5"></i> Produto cadastrado com sucesso!
-                                </div>';
-                        } else {
-                            echo '<div class="alert alert-warning text-center" role="alert" style="height: 60px; width: 350px; color:white;">
-                                    <i class="fas fa-leaf h5"></i> Produto não cadastrado!
-                                </div>';
-                        }
-                    }
-                    ?>  
                 </div>
 
             </form>
