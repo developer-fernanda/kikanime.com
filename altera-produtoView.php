@@ -2,7 +2,9 @@
 include('conexao.php');
 include('logica-loginAdm.php');
 verificaSeAdministradorEstaLogado();
-include('logica-cadastroProduto.php');
+include('logica-alteraProduto.php');
+$dado = selecionaProduto($conexao);
+
 ?>
 <!DOCTYPE html>
 <html lang="br">
@@ -25,11 +27,15 @@ include('logica-cadastroProduto.php');
         <div class="container">
             <form name="formcadastroProduto" method="post">
                 <div class="offset-lg-3 col-lg-6" id="form-cadastro-produto">
-                    <h6>CADASTRO DE PRODUTO </h6>
+                    <h6>ALTERAÇÃO DE PRODUTO </h6>
                     <div class="form-row">
-                        <div class="form-group col-md-12">
+                    <div class="form-group col-md-2">
+                            <label for="txtid_produto"> Cod </label>
+                            <input type="text" class="form-control" name="txtid_produto" value='<?php echo $dado['id_produto']; ?>' readonly>
+                        </div>
+                        <div class="form-group col-md-10">
                             <label for="txtnome_produto"> Nome do produto </label>
-                            <input type="text" class="form-control" name="txtnome_produto" placeholder="Digite o nome do produto">
+                            <input type="text" class="form-control" name="txtnome_produto" value='<?php echo $dado['nome_produto']; ?>'>
                         </div>
                     </div>
                     <div class="form-row">
@@ -44,10 +50,9 @@ include('logica-cadastroProduto.php');
                         <div class="form-group col-md-6">
                             <label for="txtsubCategoria_produto"> Sub Categoria </label>
                             <select class="form-control" name="txtsubCategoria_produto">
-                                <option value="Camiseta">Camiseta</option>
-                                <option value="Moletom">Moletam</option>
-                                <option value="Caneca">Caneca</option>
-                                <option value="Almofadas decorativas">Almofadas decorativas</option>
+                                <?php foreach ($dado as $test) { ?>
+                                <option value="<?php echo $test['id_produto']?>"><?php echo $test['nome_produto']?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>

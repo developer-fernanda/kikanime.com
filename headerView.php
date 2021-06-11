@@ -6,10 +6,10 @@
                 <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
             </div>
             <div class="list-botoes d-none d-md-block d-lg-block">
-                <button type="submit" class="btn btn-redes-sociais"> <i class="fab fa-discord"></i> </button>
-                <button type="submit" class="btn btn-redes-sociais"> <i class="fab fa-instagram"></i> </button>
-                <button type="submit" class="btn btn-redes-sociais"> <i class="fab fa-facebook-square"></i> </button>
-                <button type="submit" class="btn btn-redes-sociais"> <i class="fab fa-whatsapp"></i> </button>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
             </div>
             <ul class="list-inline list-login">
                 <li class="list-inline-item">
@@ -23,6 +23,7 @@
         </div>
     </nav>
     <!--NAV INFERIOR-->
+    <!-- style="position: fixed; margin-top:45px; z-index:700; margin-right:0px;" -->
     <nav class="navbar navbar-expand-lg" id="navInferior">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"><i class="fas fa-bars p-1"></i></span>

@@ -1,3 +1,13 @@
+<?php
+include('conexao.php');
+include('logica-loginAdm.php');
+include('logica-cadastroProduto.php');
+include('logica-deletaProduto.php');
+verificaSeAdministradorEstaLogado();
+PegaNomeDoAdministradorLogado();
+$listaProdutos = dadosProduto($conexao);
+
+?>
 <!DOCTYPE html>
 <html lang="br">
 
@@ -15,20 +25,38 @@
 
 </head>
 
-
 <body id="background-lista">
+        <!--NAV SUPERIOR-->
+        <nav id="navSuperior">
+            <div class="container d-flex justify-content-between ">
+                <div class="list-login ">
+                    <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
+                </div>
+                <div class="list-botoes d-none d-md-block d-lg-block">
+                    <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
+                    <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
+                    <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
+                    <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
+                </div>
+                <ul class="list-inline list-login">
+                    <li class="list-inline-item">
+                        <a href="logoutAdm.php" > <i class="far fa-user"></i>  Trocar </a>
+                        <a href="logoutAdm.php" > <i class="fas fa-sign-out-alt"></i> Sair  </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
     <div class="container" id="container-lista">
         <div class="row">
             <div class="col-md-12">
-                <div class="d-flex justify-content-between">
-                    <!--CADSTRO DE PRODUTO-->
-                    <h4> Cadastro de Produtos </h4>                    
-                    <a href="logout-usuario.php" class="btn btn-sair">Sair</a>
-                </div>
+                    <!--PAINEL DE PRODUTO-->
+                    <h4> Painel de Produto </h4>
                 <div class="d-flex justify-content-between">
                     <div class="nome-adm">
                         <!--NOME DO ADMINISTRADOR-->
-                        <h4>Olá, Kikanime.com! </h4>
+                        <h4>Olá <?php echo pegaNomeDoAdministradorLogado(); ?>! </h4>
                     </div>
                     <div id="botoes-lista">
                         <!--BOTÃO CADASTRO-->
@@ -37,16 +65,15 @@
                         <a href="painel-admView.php" class="btn"> <i class="fas fa-redo-alt"></i></a>
                     </div>
                 </div>
-
             </div>
-
             <!-- LISTA DE PRODUTOS CADASTRADOS-->
-            <table class="table table-borderless table-responsive-md table-hover" >
+            <table class="table table-borderless table-responsive-md table-hover">
                 <thead>
-                    <tr id="table-lista">
+                    <tr id="table-cabecalho">
                         <th>CÓDIGO</th>
                         <th>NOME</th>
-                        <th>DESCRIÇÃO DO PRODUTO</th>
+                        <th>TAMANHO</th>
+                        <th>COR</th>
                         <th>PREÇO</th>
                         <th>FOTO</th>
                         <th>AÇÕES</th>
@@ -54,34 +81,72 @@
 
                 </thead>
                 <!--Estrutura de repetição, que vai executar de acordo com a quantidade de registros armazenados no fetch_array-->
-                <!-- <?php while ($dado = $listaProdutos->fetch_array()) { ?> -->
+                <?php while ($dado = $listaProdutos->fetch_array()) { ?>
                     <!--Organiza os dados em formato de array-->
-                    <tbody>
-                        <tr>
+                    <tbody >
+                        <tr id="table-lista" >
                             <!--ele localiza pela nome da variavél-->
-                            <!-- <td> <?php echo $dado['id_produto']; ?> </td>
+                            <td> <?php echo $dado['id_produto']; ?> </td>
                             <td> <?php echo $dado['nome_produto']; ?> </td>
-                            <td> <?php echo $dado['descricao_produto']; ?> </td>
-                            <td> <?php echo $dado['preco_produto']; ?> </td> -->
+                            <td> <?php echo $dado['tamanho_produto']; ?> </td>
+                            <td> <?php echo $dado['cor_produto']; ?> </td>
+                            <td> <?php echo $dado['preco_produto']; ?> </td>
                             <td>
-                                <img src="assets/img/produtos/<?php echo $dado['foto_produto']; ?>" width='50px' heigth='50px'>
+                                <img src="assets/img/produto/<?php echo $dado['imagem_produto']; ?>" width='50px' heigth='50px'>
                             </td>
 
-                            <td class="text-center ">
+                            <td class="acao-lista">
                                 <!--Nesta linha, a variavel id_produto está recendo a variavel $dado['id_produto'], que já contém o Id de cada produto-->
-                                <!-- <a href="cadastro-produto.php?id_produto=<?php echo $dado['id_produto']; ?>" role="button"> -->
-                                    <i class="far fa-trash-alt"></i> </a>
-
+                                <a href="altera-produtoView.php?id_produto=<?php echo $dado['id_produto']; ?>" class="btn" >
+                                <i class="fas fa-pen"></i> </a>
+                                 <!-- CHAMA O MODAL -->
+                                <a href="#" class="btn" role="button" data-toggle="modal" data-target="#idmodaldeleta" >
+                                <i class="far fa-trash-alt"></i> </a>
                             </td>
                         </tr>
                     </tbody>
                 <?php } ?>
             </table>
             <!--Fim da Tabela-->
+
+        <!-- MODAL -->
+        <div class="modal fade" id="idmodaldeleta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" id="modal-color">
+                    <!-- TÍTULO MODAL -->
+                    <div class="modal-header" >
+                        <h5 class="modal-title" id="exampleModalLongTitle">Deleta produtos</h5>
+                    </div>
+                    <!-- CONTEÚDO MODAL -->
+                    <div class="modal-body">
+                        <h5 class="text-center"> Deseja realmente excluir este produto? <h5>
+                       
+                            <?php
+                                if (isset($_GET['id_produto'])) {
+                                    deletaProduto($conexao);
+                                }
+                                $listaProdutos = dadosProduto($conexao);
+                            ?>
+                        
+                    </div>
+                        
+                    <div class="modal-footer">
+                    <div class="d-flex justify-content-between">
+                        <a href="painel-admView.php?id_produto=<?php echo $listaProdutos['id_produto']; ?>" class="btn btn-deletar" role="button">DELETAR</a>
+                        <a href="painel-admView.php" class="btn btn-sair" role="button">SAIR</a>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- fim modal -->
+
         </div>
 
     </div>
-
 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>

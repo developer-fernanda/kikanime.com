@@ -1,3 +1,10 @@
+<?php
+
+include('conexao.php');
+include('logica-loginAdm.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="br">
 
@@ -18,28 +25,36 @@
 <body>
     <div id="background-login-adm">
         <div class="container">
-            <form name="formloginAdm" method="post" >
+            <form name="formloginAdm" method="post">
                 <div class="form-row">
                     <div class="offset-lg-3 col-lg-6" id="form-login-adm">
                         <h6>LOGIN DO ADMINISTRADOR </h6>
                         <div class="form-group">
-                            <label for="txtnome_adm"> Nome </label>
-                            <input type="text" class="form-control" name="txtnome_cliente" placeholder="Digite seu nome">
-                        </div>
-                        <div class="form-group">
                             <label for="txtemail_adm"> E-mail </label>
-                            <input type="text" class="form-control" name="txtemail_cliente" placeholder="Digite seu e-mail">
+                            <input type="text" class="form-control" name="txtemail_adm" placeholder="Digite seu e-mail">
                         </div>
                         <div class="form-group">
                             <label for="txtsenha_adm"> Senha </label>
-                            <input type="password" class="form-control" name="txtsenha_cliente" placeholder="Sua senha">
+                            <input type="password" class="form-control" name="txtsenha_adm" placeholder="Sua senha">
                         </div>
                         <div class="d-flex justify-content-around">
                             <a href="indexView.php" class="btn btn-entrar">IR PARA SITE</a>
-                            <a href="painel-admView.php" class="btn btn-entrar">ENTRAR</a>
+                            <button type="submit" class="btn btn-entrar">ENTRAR</button>
                         </div>
+                        <br>
+                        <!-- Verifica se existe uma declaração na variável-->
+                        <div class="text-center">
+                        <?php
+                        if ($_POST) {
+                            logaAdm($conexao);
+                        }
+
+                        ?>
+                        </div>
+                        
                     </div>
                 </div>
+
             </form>
 
         </div>
