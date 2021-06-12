@@ -1,21 +1,8 @@
 <?php
 
+include('conexao.php');
+     
 
-function selecionaProduto($conexao){
-
-//RECUPERANDO O ID DO PRODUTO
-$id_produto = $_GET['id_produto'];
-
-$select_produto = "SELECT * FROM PRODUTO WHERE id_produto = '$id_produto'";
-
-$resultado_select = mysqli_query($conexao, $select_produto);
-
-$recebe_select =  mysqli_fetch_array($resultado_select);
-
-return $recebe_select;
-}
-
-function alterarProduto($conexao){
     $cod_produto = $_POST['txtid_produto'];
     $nome_produto = $_POST['txtnome_produto'];
     $categoria_produto = $_POST['txtcategoria_produto'];
@@ -33,13 +20,11 @@ function alterarProduto($conexao){
     //EXECUTANDO INSTRUÇÃO
     $resultado_update = @mysqli_query($conexao, $update_produto);
 
+    ?>
+    <script>
+        window.location.href="painel-admView.php?cadastro_sucesso=1";
+     </script>
+     <?php
 
-    if($resultado_update == true) {
-        header('location:painel-admView.php');
-      } else {
-        header('location:casa do caralho');
-    } 
-
-}
-       
-?>
+    
+    ?>

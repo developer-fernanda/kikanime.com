@@ -2,12 +2,14 @@
 include('conexao.php');
 include('logica-loginAdm.php');
 verificaSeAdministradorEstaLogado();
-include('logica-alteraProduto.php');
+include('logica-selecionaProduto.php');
+
 $dado = selecionaProduto($conexao);
 
 ?>
 <!DOCTYPE html>
 <html lang="br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,11 +27,11 @@ $dado = selecionaProduto($conexao);
 
     <div id="background-cadastro-adm">
         <div class="container">
-            <form name="formcadastroProduto" method="post"  >
+            <form name="formcadastroProduto" method="post" action="logica-alteraProduto.php">
                 <div class="offset-lg-3 col-lg-6" id="form-cadastro-produto">
                     <h6>ALTERAÇÃO DE PRODUTO </h6>
                     <div class="form-row">
-                    <div class="form-group col-md-2">
+                        <div class="form-group col-md-2">
                             <label for="txtid_produto"> Cod </label>
                             <input type="text" class="form-control" name="txtid_produto" value='<?php echo $dado['id_produto']; ?>' readonly>
                         </div>
@@ -42,7 +44,7 @@ $dado = selecionaProduto($conexao);
                         <div class="form-group col-md-6">
                             <label for="txtcategoria_produto"> Categoria </label>
                             <input type="text" class="form-control" name="txtcategoria_produto" value='<?php echo $dado['categoria_produto']; ?>'>
-                         </div>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="txtsubCategoria_produto"> Sub Categoria </label>
                             <input type="text" class="form-control" name="txtsubCategoria_produto" value='<?php echo $dado['subCategoria_produto']; ?>'>
@@ -77,11 +79,6 @@ $dado = selecionaProduto($conexao);
                         <button class="btn btn-entrar" type="submit" value="alterar">ALTERAR</button>
                     </div>
 
-                    <?php
-                    if ($_POST) {
-                        alterarProduto($conexao);
-                    }
-                    ?>
 
                 </div>
 

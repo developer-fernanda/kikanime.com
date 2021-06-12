@@ -16,16 +16,13 @@ function cadastrarProduto($conexao){
     $resultado_insert = mysqli_query($conexao, $insert_produto);
 
     if($resultado_insert == true) {
-        header('location:cadastro-produtoView.php?cadastro_sucesso=1');
+      ?>
+    <script>
+        window.location.href="painel-admView.php?cadastro_sucesso=1";
+     </script>
+     <?php
       } else {
         header('location:cadastro-produtoView.php?cadastro_sucesso=0');
     }
 }
-function dadosProduto($conexao){
-//Seleciona dados do produto 
-    $select_produto = "SELECT * FROM produto";
-  
-    $resultado_select = mysqli_query($conexao, $select_produto);
-        
-    return $resultado_select;
-  }
+?>

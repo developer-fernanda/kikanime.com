@@ -30,8 +30,8 @@
         </button>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <div class="container d-flex justify-content-between">
-                <ul class="navbar-nav d-none d-lg-block">
-                    <li class="nav-item mt-2">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
 
                     </li>
                 </ul>
