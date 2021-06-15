@@ -1,3 +1,15 @@
+<?php
+include('conexao.php');
+include('logica-loginCliente.php');
+verificaSeClienteEstaLogado();
+// include('logica-comboBox.php');
+//logica-comboBox.php
+// $listaCategoria = listaCategoria($conexao);
+// $listaTamanho = listaTamanho($conexao);
+// $listaCor = listaCor($conexao);
+// $listaDescricao = listaDescricao($conexao);
+
+?>
 <!DOCTYPE html>
 <html lang="br">
 
@@ -25,15 +37,13 @@
         <div class="row">
 
             <!--COLUNA ESQUERDA -->
-            <div class="col-md-3" id="colunaEsquerda">
-                <!--CATEGORIAS -->
+            <!-- <div class="col-md-3" id="colunaEsquerda">            
                 <p id="categorias">CATEGORIAS</p>
                 <ul class="list-unstyled categoriasBody">
                     <li>Roupas</li>
                     <li>Utensílios</li>
                     <li>Almofadas Decorativas</li>
-                </ul>
-                <!-- XXXXXXXXXXXXX -->
+                </ul>            
                 <p id="categorias">TEXTO 2</p>
                 <ul class="list-unstyled categoriasBody">
                     <li>XXXXXX</li>
@@ -41,20 +51,19 @@
                     <li>XXXXX</li>
                     <li>XXXXXXX</li>
                     <li>XXXXX</li>
-                </ul>
-                <!-- XXXXXXXXXXXXX -->
+                </ul>            
                 <p id="categorias">TEXTO 3</p>
                 <ul class="list-unstyled categoriasBody">
                     <li>XXXXXX</li>
                     <li>XXXXXXX</li>
                     <li>XXXXX</li>
                 </ul>
-            </div>
+            </div> -->
             <!-- COLUNA DIREITA - PRODUTOS -->
-            <div class="col-lg-3 mt-3" id="colunaDireita">
+            <div class="col-lg-4" id="colunaDireita">
                 <div class="card card-anime h-100 text-center">
-                    <p> ************************************************************************************************************************************************************************************************************************************************************************************************
-                        ************************************************************************************************
+                    <p> 
+                        TEST
                     </p>
                     <h5> Moletom </h5>
                     <p> Lorem ipsum dolor sit amet consectetur. </p>
@@ -65,38 +74,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- COLUNA DIREITA - PROVISÓRIA -->
-
-            <div class="col-lg-3 mt-3" id="colunaDireita">
-                <div class="card card-anime h-100 text-center">
-                    <p> ************************************************************************************************************************************************************************************************************************************************************************************************
-                        ************************************************************************************************
-                    </p>
-                    <h5> Moletom </h5>
-                    <p> Lorem ipsum dolor sit amet consectetur. </p>
-                    <h4> R$: 100,00 </h4>
-                    <div class="text-center">
-                        <a href="#" role="button" class="btn btn-carrinho">
-                            <i class="fas fa-cart-plus mr-2"></i> Adicionar </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 mt-3" id="colunaDireita">
-                <div class="card card-anime h-100 text-center">
-                    <p> ************************************************************************************************************************************************************************************************************************************************************************************************
-                        ************************************************************************************************
-                    </p>
-                    <h5> Moletom </h5>
-                    <p> Lorem ipsum dolor sit amet consectetur. </p>
-                    <h4> R$: 100,00 </h4>
-                    <div class="text-center">
-                        <a href="#" role="button" class="btn btn-carrinho">
-                            <i class="fas fa-cart-plus mr-2"></i> Adicionar </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 

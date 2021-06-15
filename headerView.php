@@ -13,7 +13,7 @@
             </div>
             <ul class="list-inline list-login">
                 <li class="list-inline-item">
-                <a href="cadastro-clienteView.php"><i class="far fa-user"></i> Cadastrar</a>
+                <a href="cadastro-clienteView.php"><i class="far fa-user"></i> Cadastrar-se</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="login-clienteView.php"><i class="fas fa-user"></i> Login</a>
@@ -49,7 +49,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            PRODUTOS
+                            CATEGORIA
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
                             <a class="dropdown-item" href="cad_usuario.php">Camisetas</a>

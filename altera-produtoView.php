@@ -3,7 +3,13 @@ include('conexao.php');
 include('logica-loginAdm.php');
 verificaSeAdministradorEstaLogado();
 include('logica-selecionaProduto.php');
-
+include('logica-comboBox.php');
+//logica-comboBox.php
+$listaDescricao = listaDescricao($conexao);
+$listaCategoria = listaCategoria($conexao);
+$listaTamanho = listaTamanho($conexao);
+$listaCor = listaCor($conexao);
+//logica-selecionaProduto.php
 $dado = selecionaProduto($conexao);
 
 ?>
@@ -24,6 +30,27 @@ $dado = selecionaProduto($conexao);
 </head>
 
 <body>
+    <!--NAV SUPERIOR-->
+    <nav id="navSuperior">
+        <div class="container d-flex justify-content-between ">
+            <div class="list-login ">
+                <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
+            </div>
+            <div class="list-botoes d-none d-md-block d-lg-block">
+                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
+            </div>
+            <ul class="list-inline list-login">
+                <li class="list-inline-item">
+                    <!-- <a href="logoutAdm.php"> <i class="far fa-user"></i> Trocar </a> -->
+                    <a href="logoutAdm.php"> <i class="fas fa-sign-out-alt"></i> Sair </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
 
     <div id="background-cadastro-adm">
         <div class="container">
@@ -36,40 +63,85 @@ $dado = selecionaProduto($conexao);
                             <input type="text" class="form-control" name="txtid_produto" value='<?php echo $dado['id_produto']; ?>' readonly>
                         </div>
                         <div class="form-group col-md-10">
-                            <label for="txtnome_produto"> Nome do produto </label>
-                            <input type="text" class="form-control" name="txtnome_produto" value='<?php echo $dado['nome_produto']; ?>'>
+                            <!--FUNÇÃO COMBOX-->
+                            <label for="txtdescricao_produto"> Descrição </label>
+                            <select class="form-control" name="txtdescricao_produto">
+                                <?php foreach ($listaDescricao as $descricao) { ?>
+                                    <!--Comparação entre as duas ID - da tabela produto e tabela categoria-->
+                                    <?php if ($dado['id_descricao'] == $descricao['id_descricao']) { ?>
+                                        <!--Ele seleciona e traz a opção cadastrada no banco-->
+                                        <option value='<?php echo $descricao['id_descricao'] ?>'><?php echo $descricao['nome_descricao'] ?> </option>
+                                    <?php } else { ?>
+                                        <!--Ele não seleciona nenhuma opção, e traz os dados cadastrados no banco-->
+                                        <option value='<?php echo $descricao['id_descricao'] ?>'><?php echo $descricao['nome_descricao'] ?> </option>
+                                    <?php } ?>
+                                <?php } ?>
+                            </select>
+
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-8">
                             <label for="txtcategoria_produto"> Categoria </label>
-                            <input type="text" class="form-control" name="txtcategoria_produto" value='<?php echo $dado['categoria_produto']; ?>'>
+                            <!--FUNÇÃO COMBOX-->
+                            <select class="form-control" name="txtcategoria_produto">
+                                <?php foreach ($listaCategoria as $categoria) { ?>
+                                    <!--Comparação entre as duas ID - da tabela produto e tabela categoria-->
+                                    <?php if ($dado['id_categoria'] == $categoria['id_categoria']) { ?>
+                                        <!--Ele seleciona e traz a opção cadastrada no banco-->
+                                        <option selected value='<?php echo $categoria['id_categoria'] ?>'><?php echo $categoria['nome_categoria'] ?> </option>
+                                    <?php } else { ?>
+                                        <!--Ele não seleciona nenhuma opção, e traz os dados cadastrados no banco-->
+                                        <option value='<?php echo $categoria['id_categoria'] ?>'><?php echo $categoria['nome_categoria'] ?> </option>
+                                    <?php } ?>
+                                <?php } ?>
+                            </select>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="txtsubCategoria_produto"> Sub Categoria </label>
-                            <input type="text" class="form-control" name="txtsubCategoria_produto" value='<?php echo $dado['subCategoria_produto']; ?>'>
-                        </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="txttamanho_produto"> Tamanho </label>
-                            <input type="text" class="form-control" name="txttamanho_produto" value='<?php echo $dado['tamanho_produto']; ?>'>
+                            <!--FUNÇÃO COMBOX-->
+                            <select class="form-control" name="txttamanho_produto">
+                                <?php foreach ($listaTamanho as $tamanho) { ?>
+                                    <!--Comparação entre as duas ID - da tabela produto e tabela categoria-->
+                                    <?php if ($dado['id_tamanho'] == $tamanho['id_tamanho']) { ?>
+                                        <!--Ele seleciona e traz a opção cadastrada no banco-->
+                                        <option value='<?php echo $tamanho['id_tamanho'] ?>'><?php echo $tamanho['tamanho'] ?> </option>
+                                    <?php } else { ?>
+                                        <!--Ele não seleciona nenhuma opção, e traz os dados cadastrados no banco-->
+                                        <option value='<?php echo $tamanho['id_tamanho'] ?>'><?php echo $tamanho['tamanho'] ?> </option>
+                                    <?php } ?>
+                                <?php } ?>
+                            </select>
                         </div>
+                    </div>
+                    <div class="form-row">
+
                         <div class="form-group col-md-4">
                             <label for="txtcor_produto"> Cor </label>
-                            <input type="text" class="form-control" name="txtcor_produto" value='<?php echo $dado['cor_produto']; ?>'>
+                            <select class="form-control" name="txtcor_produto">
+                                <?php foreach ($listaCor as $cor) { ?>
+                                    <!--Comparação entre as duas ID - da tabela produto e tabela categoria-->
+                                    <?php if ($dado['id_cor'] == $cor['id_cor']) { ?>
+                                        <!--Ele seleciona e traz a opção cadastrada no banco-->
+                                        <option value='<?php echo $cor['id_cor'] ?>'><?php echo $cor['nome_cor'] ?> </option>
+                                    <?php } else { ?>
+                                        <!--Ele não seleciona nenhuma opção, e traz os dados cadastrados no banco-->
+                                        <option value='<?php echo $cor['id_cor'] ?>'><?php echo $cor['nome_cor'] ?> </option>
+                                    <?php } ?>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="txtquantidade_produto"> Quantidade </label>
                             <input type="text" class="form-control" name="txtquantidade_produto" value='<?php echo $dado['quantidade_produto']; ?>'>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label for="txtpreco_produto"> Preço </label>
                             <input type="text" class="form-control" name="txtpreco_produto" value='<?php echo $dado['preco_produto']; ?>'>
                         </div>
-                        <div class="form-group col-md-9">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             <label for="txtimagem_produto"> Adicionar Imagem</label>
                             <input type="file" class="form-control" name="txtimagem_produto" value='<?php echo $dado['imagem_produto']; ?>'>
                         </div>

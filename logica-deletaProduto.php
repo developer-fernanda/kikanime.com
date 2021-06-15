@@ -19,14 +19,5 @@ function deletaProduto($conexao){
 }
 
 
-function dadosProduto($conexao){
-    //Seleciona dados do produto 
-        $select_produto = "SELECT * FROM produto";
-      
-        $resultado_select = mysqli_query($conexao, $select_produto);
-            
-        return $resultado_select;
-      }
-
 
 ?>

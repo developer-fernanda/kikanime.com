@@ -63,7 +63,7 @@ $listaProdutos = dadosProduto($conexao);
                 <h4> Painel de Produto </h4>
                 <div class="d-flex justify-content-between">
                     <div class="nome-adm">
-                        <!--NOME DO ADMINISTRADOR-->
+                    <!--NOME DO ADMINISTRADOR-->
                         <h4>Olá <?php echo pegaNomeDoAdministradorLogado(); ?>! </h4>
                     </div>
                     <div id="botoes-lista">
@@ -80,6 +80,7 @@ $listaProdutos = dadosProduto($conexao);
                     <tr id="table-cabecalho">
                         <th>CÓDIGO</th>
                         <th>NOME</th>
+                        <th>CATEGORIA</th>
                         <th>TAMANHO</th>
                         <th>COR</th>
                         <th>PREÇO</th>
@@ -95,15 +96,16 @@ $listaProdutos = dadosProduto($conexao);
                         <tr id="table-lista">
                             <!--ele localiza pela nome da variavél-->
                             <td> <?php echo $dado['id_produto']; ?> </td>
-                            <td> <?php echo $dado['nome_produto']; ?> </td>
-                            <td> <?php echo $dado['tamanho_produto']; ?> </td>
-                            <td> <?php echo $dado['cor_produto']; ?> </td>
+                            <td> <?php echo $dado['nome_descricao']; ?> </td>
+                            <td> <?php echo $dado['nome_categoria']; ?> </td>
+                            <td> <?php echo $dado['tamanho']; ?> </td>
+                            <td> <?php echo $dado['nome_cor']; ?> </td>
                             <td> <?php echo $dado['preco_produto']; ?> </td>
                             <td>
                                 <img src="assets/img/produto/<?php echo $dado['imagem_produto']; ?>" width='50px' heigth='50px'>
                             </td>
 
-                            <td class="acao-lista">
+                            <td class="d-flex acao-lista">
                                 <!--Nesta linha, a variavel id_produto está recendo a variavel $dado['id_produto'], que já contém o Id de cada produto-->
                                  <!-- BOTÃO DE ALTERA -->
                                 <a href="altera-produtoView.php?id_produto=<?php echo $dado['id_produto']; ?>" class="btn">
@@ -120,7 +122,7 @@ $listaProdutos = dadosProduto($conexao);
                             <div class="modal-content">
                                 <!-- TÍTULO MODAL -->
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Deleta produtos</h5>
+                                    <h5 class="modal-title">Atenção!</h5>
                                 </div>
                                 <!-- CONTEÚDO MODAL -->
                                 <div class="modal-body">

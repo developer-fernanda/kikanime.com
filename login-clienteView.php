@@ -21,14 +21,10 @@
 
     <div class="container" id="container-login-cliente">
 
-        <form name="formloginCliente" method="post">
+        <form name="formloginCliente" method="post" action="logica-loginCliente.php">
             <div class="form-row">
                 <div class="offset-lg-3 col-lg-6" id="form-login-cliente">
                     <h6>LOGIN CLIENTE </h6>
-                    <div class="form-group">
-                        <label for="txtnome_cliente"> Nome </label>
-                        <input type="text" class="form-control" name="txtnome_cliente" placeholder="Digite seu nome">
-                    </div>
                     <div class="form-group">
                         <label for="txtemail_cliente"> E-mail </label>
                         <input type="text" class="form-control" name="txtemail_cliente" placeholder="Digite seu e-mail">

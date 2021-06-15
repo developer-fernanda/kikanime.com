@@ -266,18 +266,28 @@ body {
 }
 
 
+/* ERRO CLIENTE - ALINHAMENTO*/
+
+#background-erro-adm,
+#background-erro-cliente {
+    margin-top: 120px;
+}
+
+
 /***BORDA E ESPAÇAMENTO*********
 *****LOGIN DE CLIENTE***********
 *****CADASTRO DE CLIENTE********
 *****LOGIN DO ADMINISTRADOR***** 
 *****CADASTRO DE PRODUTO********
-*****ERRO DE ADMINISTRADOR******/
+*****ERRO DE ADMINISTRADOR******
+*****ERRO DE CLIENTE **********/
 
 #form-login-cliente,
 #form-cadastro-cliente,
 #form-login-adm,
 #form-cadastro-produto,
-#form-erro-adm {
+#form-erro-adm,
+#form-erro-cliente {
     margin-top: 40px;
     border: 1px solid #FCB040;
     padding: 70px;
@@ -286,19 +296,27 @@ body {
     background-color: #1B1B1B;
 }
 
+#background-login-adm,
+#background-cadastro-adm,
+#background-cadastro-adm {
+    margin-top: 100px;
+}
+
 
 /****TITULO H6 *****************
 *****LOGIN DE CLIENTE***********
 *****CADASTRO DE CLIENTE********
 *****LOGIN DO ADMINISTRADOR***** 
 *****CADASTRO DE PRODUTO********
-*****ERRO DE ADMINISTRADOR******/
+*****ERRO DE ADMINISTRADOR******
+*****ERRO DE CLIENTE **********/
 
 #form-login-cliente>h6,
 #form-cadastro-cliente>h6,
 #form-login-adm>h6,
 #form-cadastro-produto>h6,
-#form-erro-adm>h6 {
+#form-erro-adm>h6,
+#form-erro-cliente>h6 {
     color: #FCB040;
     margin-bottom: 20px;
     text-align: center;
@@ -322,13 +340,10 @@ body {
 }
 
 
-/* CADASTRO E LOGIN CLIENTE E ADM- INPUT*/
-
-
-/* #form-login-cliente>input,
-#form-cadastro-cliente>input {
-    background-color: #1B1B1B;
-    color: #FCB040;
+/****COR INTERNA COMBOBOX
+#form-cadastro-produto>.form-row>.form-group>.form-control>option {
+    color: #1B1B1B;
+    background-color: #FCB040;
 } */
 
 
@@ -468,13 +483,6 @@ body {
 }
 
 
-/* TELA DE ERRO - ALINHAMENTO*/
-
-#background-erro-adm {
-    margin-top: 120px;
-}
-
-
 /* PAINEL ADM - MODAL HEADER  */
 
 .modal-header {
@@ -490,9 +498,6 @@ body {
     background-color: rgb(37, 35, 35);
     color: white;
 }
-
-
-/* PAINEL ADM - BOTÃO MODAL  */
 
 
 /* PAINEL ADM - BOTÃO DELETAR  */

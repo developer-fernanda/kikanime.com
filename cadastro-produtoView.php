@@ -3,9 +3,17 @@ include('conexao.php');
 include('logica-loginAdm.php');
 verificaSeAdministradorEstaLogado();
 include('logica-cadastroProduto.php');
+include('logica-comboBox.php');
+//logica-comboBox.php
+$listaCategoria = listaCategoria($conexao);
+$listaTamanho = listaTamanho($conexao);
+$listaCor = listaCor($conexao);
+$listaDescricao = listaDescricao($conexao);
+
 ?>
 <!DOCTYPE html>
 <html lang="br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +29,27 @@ include('logica-cadastroProduto.php');
 
 <body>
 
+    <!--NAV SUPERIOR-->
+    <nav id="navSuperior">
+        <div class="container d-flex justify-content-between ">
+            <div class="list-login ">
+                <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
+            </div>
+            <div class="list-botoes d-none d-md-block d-lg-block">
+                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
+                <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
+            </div>
+            <ul class="list-inline list-login">
+                <li class="list-inline-item">
+                    <!-- <a href="logoutAdm.php"> <i class="far fa-user"></i> Trocar </a> -->
+                    <a href="logoutAdm.php"> <i class="fas fa-sign-out-alt"></i> Sair </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div id="background-cadastro-adm">
         <div class="container">
             <form name="formcadastroProduto" method="post">
@@ -28,50 +57,47 @@ include('logica-cadastroProduto.php');
                     <h6>CADASTRO DE PRODUTO </h6>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="txtnome_produto"> Nome do produto </label>
-                            <input type="text" class="form-control" name="txtnome_produto" placeholder="Digite o nome do produto">
+                            <!--FUNÇÃO COMBOX-->
+                            <label for="txtdescricao_produto"> Nome do produto </label>
+                            <select class="form-control" name="txtdescricao_produto">
+                                <?php foreach ($listaDescricao as $descricao) { ?>
+                                    <option value='<?php echo $descricao['id_descricao'] ?>'><?php echo $descricao['nome_descricao'] ?> </option>
+                                <?php } ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-8">
+                            <!--FUNÇÃO COMBOX-->
                             <label for="txtcategoria_produto"> Categoria </label>
                             <select class="form-control" name="txtcategoria_produto">
-                                <option value="Roupas">Roupas</option>
-                                <option value="Utensílios">Utensílios</option>
-                                <option value="decoração">Decoração</option>
+                                <?php foreach ($listaCategoria as $categoria) { ?>
+                                    <option value='<?php echo $categoria['id_categoria'] ?>'><?php echo $categoria['nome_categoria'] ?> </option>
+                                <?php } ?>
                             </select>
-                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="txtsubCategoria_produto"> Sub Categoria </label>
-                            <select class="form-control" name="txtsubCategoria_produto">
-                                <option value="Camiseta">Camiseta</option>
-                                <option value="Moletom">Moletom</option>
-                                <option value="Caneca">Caneca</option>
-                                <option value="Almofadas decorativas">Almofadas decorativas</option>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <!--FUNÇÃO COMBOX-->
+                            <label for="txttamanho_produto"> Tamanho </label>
+                            <select class="form-control" name="txttamanho_produto">
+                                <?php foreach ($listaTamanho as $tamanho) { ?>
+                                    <option value='<?php echo $tamanho['id_tamanho'] ?>'><?php echo $tamanho['tamanho'] ?> </option>
+                                <?php } ?>
                             </select>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="txttamanho_produto"> Tamanho </label>
-                            <select class="form-control" name="txttamanho_produto">
-                                <option value="UN">UN</option>
-                                <option value="P">P</option>
-                                <option value="M">M</option>
-                                <option value="G">G</option>
-                                <option value="GG">GG</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
+                            <!--FUNÇÃO COMBOX-->
                             <label for="txtcor_produto"> Cor </label>
                             <select class="form-control" name="txtcor_produto">
-                                <option value="preto">Preto</option>
-                                <option value="branco">Branco</option>
-                                <option value="cinza">Cinza</option>
+                                <?php foreach ($listaCor as $cor) { ?>
+                                    <option value='<?php echo $cor['id_cor'] ?>'><?php echo $cor['nome_cor'] ?> </option>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="txtquantidade_produto"> Quantidade </label>
+                            <label for="txtquantidade_produto "> Quantidade </label>
                             <select class="form-control" name="txtquantidade_produto">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -80,13 +106,13 @@ include('logica-cadastroProduto.php');
                                 <option value="5">5</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label for="txtpreco_produto"> Preço </label>
                             <input type="text" class="form-control" name="txtpreco_produto" placeholder="Preço">
                         </div>
-                        <div class="form-group col-md-9">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             <label for="txtimagem_produto"> Adicionar Imagem</label>
                             <input type="file" class="form-control" name="txtimagem_produto">
                         </div>
@@ -96,7 +122,7 @@ include('logica-cadastroProduto.php');
                         <button class="btn btn-entrar" type="submit" value="entrar">CADASTRAR</button>
                     </div>
 
-                     <?php
+                    <?php
                     if ($_POST) {
                         cadastrarProduto($conexao);
                     }
@@ -112,7 +138,7 @@ include('logica-cadastroProduto.php');
                                 </div>';
                         }
                     }
-                    ?>  
+                    ?>
                 </div>
 
             </form>
