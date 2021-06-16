@@ -1,9 +1,12 @@
 <?php
 include('conexao.php');
 include('logica-loginCliente.php');
-verificaSeClienteEstaLogado();
+include('logica-cadastroProduto.php');
+include('logica-carrinho.php');
+$listaProduto = dadosProduto($conexao);
+// verificaSeClienteEstaLogado();
 // include('logica-comboBox.php');
-//logica-comboBox.php
+// logica-comboBox.php
 // $listaCategoria = listaCategoria($conexao);
 // $listaTamanho = listaTamanho($conexao);
 // $listaCor = listaCor($conexao);
@@ -28,56 +31,28 @@ verificaSeClienteEstaLogado();
 </head>
 
 <body>
-    <!--Nav-->
+    <!--HEADER-->
     <?php include("headerView.php") ?>
-
+    <!--CAROUSEL-->
     <?php include("carouselView.php") ?>
 
     <div class="container">
-        <div class="row">
-
-            <!--COLUNA ESQUERDA -->
-            <!-- <div class="col-md-3" id="colunaEsquerda">            
-                <p id="categorias">CATEGORIAS</p>
-                <ul class="list-unstyled categoriasBody">
-                    <li>Roupas</li>
-                    <li>Utensílios</li>
-                    <li>Almofadas Decorativas</li>
-                </ul>            
-                <p id="categorias">TEXTO 2</p>
-                <ul class="list-unstyled categoriasBody">
-                    <li>XXXXXX</li>
-                    <li>XXXXXXX</li>
-                    <li>XXXXX</li>
-                    <li>XXXXXXX</li>
-                    <li>XXXXX</li>
-                </ul>            
-                <p id="categorias">TEXTO 3</p>
-                <ul class="list-unstyled categoriasBody">
-                    <li>XXXXXX</li>
-                    <li>XXXXXXX</li>
-                    <li>XXXXX</li>
-                </ul>
-            </div> -->
-            <!-- COLUNA DIREITA - PRODUTOS -->
-            <div class="col-lg-4" id="colunaDireita">
-                <div class="card card-anime h-100 text-center">
-                    <p> 
-                        TEST
-                    </p>
-                    <h5> Moletom </h5>
-                    <p> Lorem ipsum dolor sit amet consectetur. </p>
-                    <h4> R$: 100,00 </h4>
-                    <div class="text-center">
-                        <a href="#" role="button" class="btn btn-carrinho">
-                            <i class="fas fa-cart-plus mr-2"></i> Adicionar </a>
+        <div class="row">     
+           <?php while ($dado = $listaProduto->fetch_array()) { ?>
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="card card-listaProdutos h-100 text-center shadow">
+                        <p class="text-center"><img src="assets/img/produto/<?php echo $dado['imagem_produto']; ?>" width='250px' heigth='250px'></p>
+                        <h4> <?php echo $dado['nome_descricao']; ?> </h4>
+                        <p> Tamanho: <?php echo $dado['tamanho']; ?> </p>
+                        <h5> R$ <?php echo $dado['preco_produto']; ?> </h5>
+                        <div class="text-center">
+                            <a href="logica-carrinho.php?id_produto=<?php echo $dado['id_produto']; ?> &ip_provisorio=<?php echo $ip_provisorio ?>" role="button" class="btn btn-carrinho"> Carrinho <i class="fas fa-shopping-cart"></i> </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
-
-
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

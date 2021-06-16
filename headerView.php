@@ -13,7 +13,10 @@
             </div>
             <ul class="list-inline list-login">
                 <li class="list-inline-item">
-                <a href="cadastro-clienteView.php"><i class="far fa-user"></i> Cadastrar-se</a>
+                    <a href="carrinhoView.php"><i class="fas fa-shopping-cart"></i> </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="cadastro-clienteView.php"><i class="far fa-user"></i> Cadastrar</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="login-clienteView.php"><i class="fas fa-user"></i> Login</a>

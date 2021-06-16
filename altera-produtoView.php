@@ -77,7 +77,6 @@ $dado = selecionaProduto($conexao);
                                     <?php } ?>
                                 <?php } ?>
                             </select>
-
                         </div>
                     </div>
                     <div class="form-row">

@@ -7,12 +7,12 @@ include('logica-deletaProduto.php');
 verificaSeAdministradorEstaLogado();
 PegaNomeDoAdministradorLogado();
 //Logica-cadastroProduto
-$listaProdutos = dadosProduto($conexao);
+$listaProduto = dadosProduto($conexao);
 
 if (isset($_GET['id_produto'])) {
     deletaProduto($conexao);
 }
-$listaProdutos = dadosProduto($conexao);
+$listaProduto = dadosProduto($conexao);
 ?>
 
 
@@ -51,8 +51,7 @@ $listaProdutos = dadosProduto($conexao);
                     <a href="logoutAdm.php"> <i class="far fa-user"></i> Trocar </a>
                     <a href="logoutAdm.php"> <i class="fas fa-sign-out-alt"></i> Sair </a>
                 </li>
-            </ul>
-
+           </ul>
         </div>
     </nav>
 
@@ -91,7 +90,7 @@ $listaProdutos = dadosProduto($conexao);
                 </thead>
                 <!--Estrutura de repetição, que vai executar de acordo com a quantidade de registros armazenados no fetch_array-->
                 <!--Organiza os dados em formato de array-->
-                <?php while ($dado = $listaProdutos->fetch_array()) { ?>
+                <?php while ($dado = $listaProduto->fetch_array()) { ?>
                     <tbody>
                         <tr id="table-lista">
                             <!--ele localiza pela nome da variavél-->

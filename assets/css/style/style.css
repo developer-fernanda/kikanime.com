@@ -528,3 +528,42 @@ body {
     color: white;
     text-decoration: none;
 }
+
+
+/****************************************
+***************** INDEX *****************
+*****************************************/
+
+.card-listaProdutos {
+    border: 1px solid #FCB040;
+    background-color: rgb(37, 35, 35);
+    color: #FCB040;
+    padding: 40px;
+}
+
+.card-listaProdutos>h4 {
+    color: white;
+}
+
+
+/****************************************
+***************** CARRINHO **************
+*****************************************/
+
+
+/* CARRINHO - H4  */
+
+#carrinhoCompra>h4 {
+    margin-top: 120px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+}
+
+
+/* CARRINHO - NOME DO CLIENTE */
+
+.nome-cliente {
+    color: #FCB040;
+    margin-bottom: 20px;
+}
