@@ -5,7 +5,6 @@ verificaSeAdministradorEstaLogado();
 include('logica-selecionaProduto.php');
 include('logica-comboBox.php');
 //logica-comboBox.php
-$listaDescricao = listaDescricao($conexao);
 $listaCategoria = listaCategoria($conexao);
 $listaTamanho = listaTamanho($conexao);
 $listaCor = listaCor($conexao);
@@ -60,23 +59,15 @@ $dado = selecionaProduto($conexao);
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <label for="txtid_produto"> Cod </label>
-                            <input type="text" class="form-control" name="txtid_produto" value='<?php echo $dado['id_produto']; ?>' readonly>
+                            <input type="text" class="form-control" name="txtid_produto" value='<?php echo $dado['id_produto']; ?>'>
                         </div>
-                        <div class="form-group col-md-10">
-                            <!--FUNÇÃO COMBOX-->
-                            <label for="txtdescricao_produto"> Descrição </label>
-                            <select class="form-control" name="txtdescricao_produto">
-                                <?php foreach ($listaDescricao as $descricao) { ?>
-                                    <!--Comparação entre as duas ID - da tabela produto e tabela categoria-->
-                                    <?php if ($dado['id_descricao'] == $descricao['id_descricao']) { ?>
-                                        <!--Ele seleciona e traz a opção cadastrada no banco-->
-                                        <option value='<?php echo $descricao['id_descricao'] ?>'><?php echo $descricao['nome_descricao'] ?> </option>
-                                    <?php } else { ?>
-                                        <!--Ele não seleciona nenhuma opção, e traz os dados cadastrados no banco-->
-                                        <option value='<?php echo $descricao['id_descricao'] ?>'><?php echo $descricao['nome_descricao'] ?> </option>
-                                    <?php } ?>
-                                <?php } ?>
-                            </select>
+                        <div class="form-group col-md-12">
+                            <label for="txtnome_produto"> Nome do Produto </label>
+                            <input class="form-control" type="text" name="txtnome_produto" value='<?php echo $dado['nome_produto']; ?>'>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="txtdescricao_produto"> Descrição do Produto </label>
+                            <input class="form-control" type="text" name="txtdescricao_produto" value='<?php echo $dado['descricao_produto']; ?>'>
                         </div>
                     </div>
                     <div class="form-row">

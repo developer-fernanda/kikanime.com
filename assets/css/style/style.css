@@ -219,39 +219,6 @@ body {
 ***************************/
 
 
-/*TITULO CATEGORIAS*/
-
-#categorias {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #FCB040;
-    color: #1B1B1B;
-    padding: 10px;
-    font: bold;
-    font-size: 20px;
-}
-
-
-/*CONTEÚDO CATEGORIAS*/
-
-.categoriasBody {
-    color: white;
-}
-
-#colunaEsquerda {
-    margin-top: 10px;
-    border: 1px solid #FCB040;
-}
-
-
-/* CARDS CONTEÚDO*/
-
-.card-anime {
-    background-color: rgb(37, 35, 35);
-    color: white;
-}
-
-
 /* CARDS BOTÃO*/
 
 .btn-carrinho {
@@ -410,6 +377,7 @@ body {
     background-color: #FCB040;
     color: #1B1B1B;
     margin-left: 10px;
+    margin-bottom: 4px;
 }
 
 #botoes-lista>a:hover {
@@ -538,7 +506,7 @@ body {
     border: 1px solid #FCB040;
     background-color: rgb(37, 35, 35);
     color: #FCB040;
-    padding: 40px;
+    padding: 30px;
 }
 
 .card-listaProdutos>h4 {
@@ -560,10 +528,31 @@ body {
     color: white;
 }
 
+#carrinhoCompra>h5 {
+    color: white;
+    text-align: center;
+}
+
 
 /* CARRINHO - NOME DO CLIENTE */
 
 .nome-cliente {
     color: #FCB040;
     margin-bottom: 20px;
+}
+
+.listacarrinho>h4,
+.listacarrinho>h2 {
+    margin-top: 50px;
+    color: white;
+}
+
+
+/****************************************
+*************** FOOTER ******************
+*****************************************/
+
+footer {
+    margin-top: 60px;
+    color: white;
 }

@@ -77,10 +77,11 @@ $listaProduto = dadosProduto($conexao);
             <table class="table table-borderless table-responsive-md table-hover">
                 <thead>
                     <tr id="table-cabecalho">
-                        <th>CÓDIGO</th>
+                        <th>COD</th>
                         <th>NOME</th>
+                        <th>DESCRIÇÃO</th>
                         <th>CATEGORIA</th>
-                        <th>TAMANHO</th>
+                        <th>TAM</th>
                         <th>COR</th>
                         <th>PREÇO</th>
                         <th>FOTO</th>
@@ -95,7 +96,8 @@ $listaProduto = dadosProduto($conexao);
                         <tr id="table-lista">
                             <!--ele localiza pela nome da variavél-->
                             <td> <?php echo $dado['id_produto']; ?> </td>
-                            <td> <?php echo $dado['nome_descricao']; ?> </td>
+                            <td> <?php echo $dado['nome_produto']; ?> </td>
+                            <td> <?php echo $dado['descricao_produto']; ?> </td>
                             <td> <?php echo $dado['nome_categoria']; ?> </td>
                             <td> <?php echo $dado['tamanho']; ?> </td>
                             <td> <?php echo $dado['nome_cor']; ?> </td>

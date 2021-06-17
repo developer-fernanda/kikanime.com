@@ -8,7 +8,6 @@ include('logica-comboBox.php');
 $listaCategoria = listaCategoria($conexao);
 $listaTamanho = listaTamanho($conexao);
 $listaCor = listaCor($conexao);
-$listaDescricao = listaDescricao($conexao);
 
 ?>
 <!DOCTYPE html>
@@ -57,13 +56,12 @@ $listaDescricao = listaDescricao($conexao);
                     <h6>CADASTRO DE PRODUTO </h6>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <!--FUNÇÃO COMBOX-->
-                            <label for="txtdescricao_produto"> Nome do produto </label>
-                            <select class="form-control" name="txtdescricao_produto">
-                                <?php foreach ($listaDescricao as $descricao) { ?>
-                                    <option value='<?php echo $descricao['id_descricao'] ?>'><?php echo $descricao['nome_descricao'] ?> </option>
-                                <?php } ?>
-                            </select>
+                            <label for="txtnome_produto"> Nome do Produto </label>
+                            <input class="form-control" type="text" name="txtnome_produto" placeholder="Digite o nome do produto">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="txtdescricao_produto"> Descrição do Produto </label>
+                            <input class="form-control" type="text" name="txtdescricao_produto" placeholder="Digite uma descrição">
                         </div>
                     </div>
                     <div class="form-row">
@@ -108,7 +106,7 @@ $listaDescricao = listaDescricao($conexao);
                         </div>
                         <div class="form-group col-md-4">
                             <label for="txtpreco_produto"> Preço </label>
-                            <input type="text" class="form-control" name="txtpreco_produto" placeholder="Preço">
+                            <input type="text" class="form-control" name="txtpreco_produto" placeholder="R$">
                         </div>
                     </div>
                     <div class="form-row">

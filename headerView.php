@@ -1,3 +1,16 @@
+<?php
+
+$idClienteCookie = $_COOKIE['ip_provisorio'];
+// Count ele conta(*) os registros do banco
+// As é um recurso que nomeia uma apelido para a função anterior 
+$select_totalCarrinho = "SELECT count(*) AS quantidade  FROM carrinho WHERE cookie_carrinho =  '$idClienteCookie' ";
+
+$resultado_total = mysqli_query($conexao, $select_totalCarrinho);
+$total_carrinho = mysqli_fetch_array($resultado_total);
+
+?>
+
+
 <header>
     <!--NAV SUPERIOR-->
     <nav id="navSuperior" class="fixed-top">
@@ -13,7 +26,7 @@
             </div>
             <ul class="list-inline list-login">
                 <li class="list-inline-item">
-                    <a href="carrinhoView.php"><i class="fas fa-shopping-cart"></i> </a>
+                    <a href="carrinhoView.php"> <i class="fas fa-shopping-cart"></i> <?php echo $total_carrinho['quantidade'] ?> </a>
                 </li>
                 <li class="list-inline-item">
                     <a href="cadastro-clienteView.php"><i class="far fa-user"></i> Cadastrar</a>

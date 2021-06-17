@@ -1,17 +1,5 @@
 <?php 
 
-//FUNÇÃO COMBOX DESCRICAO
-function listaDescricao($conexao){
-    $lista_descricao = array();
-    $select_resultado =  'SELECT * FROM descricao order by nome_descricao';
-    $resultado_select = mysqli_query($conexao, $select_resultado);
-    while($recebe_descricao = mysqli_fetch_assoc($resultado_select)){
-        array_push($lista_descricao, $recebe_descricao);
-    } 
-   //Variavél que contém o array
-   return $lista_descricao;
-}
-
 
  
 //FUNÇÃO COMBOX CATEGORIA 

@@ -1,16 +1,27 @@
 <?php
 include('conexao.php');
 include('logica-loginCliente.php');
-include('logica-carrinho.php');
 
+//recupera o cookie
 $idClienteCookie = $_COOKIE['ip_provisorio'];
 
-$select_carrinho = "SELECT * FROM carrinho INNER JOIN produto ON produto.id_produto = carrinho.id_produto INNER JOIN cliente on cliente.id_cliente = carrinho.id_cliente WHERE cookie_carrinho =  $idClienteCookie";
+//seleciona os dados no carrinho 
+$select_carrinho = "SELECT * FROM carrinho 
+INNER JOIN produto ON produto.id_produto = carrinho.id_produto
+INNER JOIN tamanho ON produto.id_tamanho = tamanho.id_tamanho  
+INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
+INNER JOIN cor ON produto.id_cor = cor.id_cor WHERE cookie_carrinho =  '$idClienteCookie'";
 
 $resultado_select = mysqli_query($conexao, $select_carrinho);
 
-var_dump($resultado_select);
-die();
+
+//seleciona o valor dos produtos do carrinho
+$select_total_carrinho = "SELECT SUM(produto.preco_produto) AS total_carrinho FROM carrinho
+INNER JOIN produto ON  carrinho.id_produto = produto.id_produto WHERE cookie_carrinho = '$idClienteCookie'";
+
+$resultado_carrinho = mysqli_query($conexao, $select_total_carrinho);
+
+$total_carrinho = mysqli_fetch_assoc($resultado_carrinho);
 
 ?>
 <!DOCTYPE html>
@@ -61,28 +72,35 @@ die();
                 <!--NOME DO CLIENTE-->
                 <div class="d-flex justify-content-between">
                     <div class="nome-cliente">
-                        <h4>Olá kikasManinas! </h4>
+                        <h4>Olá Lucia Helena Mesquita Viola Tomaz! </h4>
                     </div>
                     <div id="botoes-lista">
                         <!--BOTÃO FINALIZAR-->
                         <a href="painel-admView.php" class="btn"> Finalizar </a>
                     </div>
                 </div>
+                <h5> Valor total do carrinho R$:
+                    <?php echo number_format($total_carrinho['total_carrinho'], 2); ?>
+                </h5>
             </div>
             <!--COLUNA -->
-            <?php while ($lista_carrinho = mysqli_fetch_assoc($resultado_select)) { ?>
-                <div class="col-lg-6 mt-4">
+            <?php while ($lista_carrinho =  mysqli_fetch_array($resultado_select)) { ?>
+                <div class="col-lg-12 mt-4">
                     <div class="card card-listaProdutos h-100 text-center shadow">
                         <div class="d-flex">
-                            <div class="col-md-6">
-                                <p class="text-center"><img src="assets/img/produto/<?php echo $lista_carrinho ['imagem_produto']; ?>" width='200px' heigth='200px'></p>
+                            <div class="col-4">
+                                <p class="text-center"><img src="assets/img/produto/<?php echo $lista_carrinho['imagem_produto']; ?>" width='200px' heigth='200px'></p>
                             </div>
-                            <div class="col-md-6 mt-5">
-                                <h5> <?php echo $lista_carrinho ['nome_descricao']; ?> </h5>
-                                <p> Tamanho: <?php echo $lista_carrinho ['tamanho']; ?> </p>
-                                <h5> R$ <?php echo $lista_carrinho ['preco_produto']; ?> </h5>
+                            <div class="col-4 listacarrinho">
+                                <h4> <?php echo $lista_carrinho['nome_produto']; ?> </h4>
+                                <p> Descrição: <?php echo $lista_carrinho['descricao_produto']; ?> </p>
+                                <p> Tamanho: <?php echo $lista_carrinho['tamanho']; ?> </p>
+                                <p> Cor: <?php echo $lista_carrinho['nome_cor']; ?> </p>
+                            </div>
+                            <div class="col-4 listacarrinho mt-4">
+                                <h2> R$ <?php echo $lista_carrinho['preco_produto']; ?> </h2>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-carrinho"> <i class="fas fa-trash-alt"></i> Excluir </a>
+                                    <a href="#" class="btn btn-carrinho"> <i class="fas fa-trash-alt"></i> Remover </a>
                                 </div>
                             </div>
                         </div>
