@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Jun-2021 às 03:13
+-- Tempo de geração: 19-Jun-2021 às 03:37
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.8
 
@@ -60,9 +60,9 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id_carrinho`, `id_produto`, `id_cliente`, `cookie_carrinho`) VALUES
-(1, 1, 0, '192.168.56.1'),
 (2, 4, 0, '192.168.56.1'),
-(3, 11, 0, '192.168.56.1');
+(7, 2, 0, '192.168.56.1'),
+(8, 11, 0, '192.168.56.1');
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,21 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome_cliente`, `email_cliente`, `senha_cliente`) VALUES
-(1, 'Henrique Mesquita Viola', 'henrique@gmail.com', '1234');
+(1, 'Henrique Mesquita Viola', 'henrique@gmail.com', '1234'),
+(2, 'Adailton Nascimento', 'dada@gmail.com', '1234'),
+(3, 'Lucas Moraes', 'lucas@gmail.com', '1234'),
+(4, 'Roberto Tomaz', 'roberto@gmail.com', '1234'),
+(5, 'Fernanda Ingrid', 'fernanda@gmail.com', '1234'),
+(7, 'Lucia Helena', 'luciaH@gmail.com', '1234'),
+(8, 'Jesus Galindo', 'jesus@gmail.com', '1234'),
+(9, 'Brandon Henrique', 'brandon@gmail.com', '1234'),
+(10, 'Elieny Furtado', 'elieny@gmail.com', '1234'),
+(11, 'Wesley Silva', 'wesley@gmail.com', '1234'),
+(12, 'Ricieri Moraes', 'ricieri@gmail.com', '1234'),
+(13, 'Edilson Rocha', 'edilson@gmail.com', '1234'),
+(14, 'Livia Arruda', 'livia@gmail.com', '1234'),
+(15, 'Rosana Macedo', 'rosana@gmail.com', '1234'),
+(16, 'Julio Cesar', 'julio@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -124,6 +138,47 @@ INSERT INTO `cor` (`id_cor`, `nome_cor`) VALUES
 (1, 'Preto'),
 (2, 'Branco'),
 (3, 'Cinza');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estampa`
+--
+
+CREATE TABLE `estampa` (
+  `id_estampa` int(11) NOT NULL,
+  `nome_estampa` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `estampa`
+--
+
+INSERT INTO `estampa` (`id_estampa`, `nome_estampa`) VALUES
+(1, '1.jpg'),
+(2, '2.jpg'),
+(3, '3.jpg'),
+(4, '4.jpg'),
+(5, '5.jpg'),
+(6, '6.jpg'),
+(7, '7.jpg'),
+(8, '8.jpg'),
+(9, '9.jpg'),
+(10, '10.jpg'),
+(11, '11.jpg'),
+(12, '12.jpg'),
+(13, '13.jpg'),
+(14, '14.jpg'),
+(15, '15.jpg'),
+(16, '16.jpg'),
+(17, '17.jpg'),
+(18, '18.jpg'),
+(19, '19.jpg'),
+(20, '20.jpg'),
+(21, '21.jpg'),
+(22, '22.jpg'),
+(23, '23.jpg'),
+(24, '24.jpg');
 
 -- --------------------------------------------------------
 
@@ -175,7 +230,7 @@ INSERT INTO `produto` (`id_produto`, `nome_produto`, `descricao_produto`, `id_ca
 (11, 'Moletom Feminino', '100 % Algodão', 2, 3, 1, 1, '100.00', '12.jpg'),
 (12, 'Moletom Masculino ', '100 % Algodão', 2, 4, 1, 1, '100.00', '13.jpg'),
 (13, 'Caneca', 'Cerâmica', 3, 5, 1, 1, '59.90', '18.jpg'),
-(14, 'Almofada', '45cm x 45cm', 4, 5, 3, 1, '59.90', '21.jpg'),
+(14, 'Almofada', '45cm x 45cm', 4, 5, 3, 1, '59.90', '14.jpg'),
 (15, 'Caneca ', 'Cerâmica', 3, 5, 2, 1, '59.90', '17.jpg');
 
 -- --------------------------------------------------------
@@ -250,6 +305,12 @@ ALTER TABLE `cor`
   ADD PRIMARY KEY (`id_cor`);
 
 --
+-- Índices para tabela `estampa`
+--
+ALTER TABLE `estampa`
+  ADD PRIMARY KEY (`id_estampa`);
+
+--
 -- Índices para tabela `item_venda`
 --
 ALTER TABLE `item_venda`
@@ -287,7 +348,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `categoria`
@@ -299,13 +360,19 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `cor`
 --
 ALTER TABLE `cor`
   MODIFY `id_cor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `estampa`
+--
+ALTER TABLE `estampa`
+  MODIFY `id_estampa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `item_venda`

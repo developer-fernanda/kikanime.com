@@ -1,51 +1,49 @@
 <footer>
-<div class="container">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-5 col-md-12">
+            <div class="col-lg-4 col-md-12">
                 <nav id="footer_acompanhe">
                     <ul class="list-unstyled ">
-                        <img src="assets/img/logos/logo-branco.png" class="img-fluid" alt="Damasio_logo">
-                        <li class="h6"> </i> NOS ACOMPANHE</li>
-                        <li>
-                            <a target="_blank" href="https://wa.me/5511993097983" class="btn  mt-1
-                            " style="border-radius: 25px;"> <i class="fab fa-whatsapp "></i>
-                            </a>
-                            <a target="_blank" href="https://www.instagram.com/damasiosaude/" class="btn  mt-1 " style="border-radius: 25px; "> <i class="fab fa-instagram"></i>
-                            </a>
-                            <a target="_blank" href="https://www.facebook.com/damasiosaude/" class="btn  mt-1 " style="border-radius: 25px; "> <i class="fab fa-facebook-f"></i>
-                            </a>
+                        <h6> NOS ACOMPANHE</h6>
+                        <hr>
+                        <li class="mb-3">
+                            <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
+                            <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
+                            <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
                         </li>
+                        <img src="assets/img/logo/logo-footer.png" class="img-fluid" alt="Kikeanime">
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-5 col-md-12 ">
-                <nav id="footer_horarios">
+            <div class="col-lg-4 col-md-12 ">
+                <nav id="footer_sobre">
                     <ul class="list-unstyled ">
-                        <li class="h6"> <i class="far fa-clock"></i> HORÁRIOS DE ATENDIMENTO</li>
-                        <li>Segunda à Sexta-feira - 8:00 às 19:00</li>
-                        <li>Sábado - 8:00 às 12:00</li>
-                        <li class="h6 mt-5"> <i class="fas fa-home"></i> LOCAL DE ATENDIMENTO</li>
-                        <li> Rua Maria Andrade de Oliveira, 155.</li>
-                        <li> Jardim Floresta - Vargem Grande Paulista</li>
-                        <li> Próximo a Raposo Tavares</li>
+                        <h6> SOBRE NÓS</h6>
+                        <hr>
+                        <li> Kikanime é um site de vendas de produtos personalizados com diversas estampas autorais do artista Kik.mein, que em suas criações utiliza como inspiração animes, personagens de quadrinho e mangás, atibuindo uma indetidade própria a sua arte.</li>    
                     </ul>
                 </nav>
             </div>
             <!--  -->
-            <div class="col-lg-2 col-md-12">
+            <div class="col-lg-4 col-md-12">
                 <nav id="footer_nav">
                     <ul class="list-unstyled">
-                        <li class="h6"> ACESSE</li>
+                        <h6> ACESSE</h6>
+                        <hr>
                         <li><a href="index.php"> Home </a> </li>
-                      <li><a href="especialidades.php">Categorias</a></li>
-                        <li><a href="blog">Blog</a></li>
-            
+                        <li><a href="sobre.php"> Sobre </a> </li>
+                        <li><a href="categoria.php">Categoria</a></li>
+                        <li><a href="contato.php">Contato</a></li>
+                        <br>
+                        <h6> ÁREA DO ADMINISTRADOR</h6>
+                        <hr>
+                        <li><a href="login-admView.php" >Login</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="col-12 mt-5" id="direitos_reservados">
-            <p>Espaço Damasio CRP/SP 06/9059 J. Todos os direitos reservados. </p>
+        <div class="col-12 mt-3 text-center" id="direitos_reservados">
+            <p>Kikanime. Todos os direitos reservados. </p>
         </div>
     </div>
 

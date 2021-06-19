@@ -29,12 +29,6 @@ include('logica-loginAdm.php');
             <div class="list-login ">
                 <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
             </div>
-            <div class="list-botoes d-none d-md-block d-lg-block">
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
-            </div>
             <ul class="list-inline list-login">
                 <li class="list-inline-item">
                     <!-- <a href="logoutAdm.php"> <i class="far fa-user"></i> Trocar </a> -->

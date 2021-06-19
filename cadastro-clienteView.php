@@ -1,3 +1,11 @@
+<?php
+
+include('conexao.php');
+include('logica-cadastroCliente.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="br">
 
@@ -16,8 +24,8 @@
 </head>
 
 <body>
-    <!--Nav-->
-    <?php include("headerView.php") ?>
+    <!--NAV-->
+    <?php include("header-indexView.php") ?>
 
     <div class="container" id="container-cadastro-cliente">
 
@@ -38,9 +46,17 @@
                         <input type="password" class="form-control" name="txtsenha_cliente" placeholder="Sua senha">
                     </div>
                     <div class="d-flex justify-content-around">
-                        <a href="indexView.php" class="btn btn-voltar">VOLTAR</a>
-                        <button class="btn btn-entrar" type="submit" value="entrar">CADASTRAR-SE</button>
+                        <a href="indexView.php" class="btn btn-voltar">CANCELAR</a>
+                        <button class="btn btn-entrar" type="submit" value="entrar">CADASTRAR</button>
                     </div>
+
+                    <?php
+                    if ($_POST) {
+                        cadastraCliente($conexao);
+                    }
+
+                    ?>
+
                 </div>
             </div>
         </form>

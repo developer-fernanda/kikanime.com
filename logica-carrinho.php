@@ -12,9 +12,23 @@ $insert_carrinho = "INSERT INTO carrinho VALUES(0, $id_produto, 0, '$idClienteCo
 $resultado = mysqli_query($conexao, $insert_carrinho);
 
 if ($resultado == true) {
-    header('location:indexView.php');
+    header('location:carrinhoView.php');
 } else {
     echo 'Você ainda não possui nenhum item cadastrado';
+}
+
+function carrinhoCliente($conexao){
+//Recuperando o carrinho 
+      
+    $idClienteCookie = $_COOKIE['ip_provisorio'];
+
+    $select_carrinho = "SELECT * FROM carrinho WHERE cookie_carrinho='$idClienteCookie' ";
+    
+    $resultado_select =  mysqli_query($conexao, $select_carrinho );
+
+    return $resultado_select;
+
+    
 }
 
 

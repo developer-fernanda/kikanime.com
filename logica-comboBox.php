@@ -1,7 +1,5 @@
 <?php 
 
-
- 
 //FUNÇÃO COMBOX CATEGORIA 
 function listaCategoria($conexao){
      $lista_categoria = array();

@@ -42,27 +42,8 @@ $total_carrinho = mysqli_fetch_assoc($resultado_carrinho);
 </head>
 
 <body>
-    <!--HEADER-->
-    <nav id="navSuperior">
-        <div class="container d-flex justify-content-between ">
-            <div class="list-login ">
-                <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
-            </div>
-            <div class="list-botoes d-none d-md-block d-lg-block">
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
-            </div>
-            <ul class="list-inline list-login">
-                <li class="list-inline-item">
-                    <a href="indexView.php"><i class="fas fa-arrow-left"></i> Voltar </a>
-                    <a href="logoutAdm.php"> <i class="fas fa-sign-out-alt"></i> Sair </a>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
+    <!--NAV-->
+    <?php include("header-indexView.php") ?>
 
     <div class="container">
         <div class="row">
@@ -72,7 +53,7 @@ $total_carrinho = mysqli_fetch_assoc($resultado_carrinho);
                 <!--NOME DO CLIENTE-->
                 <div class="d-flex justify-content-between">
                     <div class="nome-cliente">
-                        <h4>Olá Lucia Helena Mesquita Viola Tomaz! </h4>
+                        <h4>Olá, <?php echo pegaNomeDoClienteLogado();?>! </h4>
                     </div>
                     <div id="botoes-lista">
                         <!--BOTÃO FINALIZAR-->
@@ -88,19 +69,21 @@ $total_carrinho = mysqli_fetch_assoc($resultado_carrinho);
                 <div class="col-lg-12 mt-4">
                     <div class="card card-listaProdutos h-100 text-center shadow">
                         <div class="d-flex">
-                            <div class="col-4">
-                                <p class="text-center"><img src="assets/img/produto/<?php echo $lista_carrinho['imagem_produto']; ?>" width='200px' heigth='200px'></p>
+                            <div class="col-lg-4 ">
+                                <p class="text-center"><img src="assets/img/produto/<?php echo $lista_carrinho['imagem_produto']; ?>" width='100px' heigth='100px' class="img-fluid rounded" ></p>
                             </div>
-                            <div class="col-4 listacarrinho">
-                                <h4> <?php echo $lista_carrinho['nome_produto']; ?> </h4>
-                                <p> Descrição: <?php echo $lista_carrinho['descricao_produto']; ?> </p>
+                            <div class="col-lg-4 ">
+                                <h5> <?php echo $lista_carrinho['nome_produto']; ?> </h5>
+                                <p class="d-none d-md-block d-lg-block"> Descrição: <?php echo $lista_carrinho['descricao_produto']; ?> </p>
                                 <p> Tamanho: <?php echo $lista_carrinho['tamanho']; ?> </p>
                                 <p> Cor: <?php echo $lista_carrinho['nome_cor']; ?> </p>
                             </div>
-                            <div class="col-4 listacarrinho mt-4">
-                                <h2> R$ <?php echo $lista_carrinho['preco_produto']; ?> </h2>
+                            <div class="col-lg-4 mt-2">
+                                <h5> R$ <?php echo $lista_carrinho['preco_produto']; ?> </h5>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-carrinho"> <i class="fas fa-trash-alt"></i> Remover </a>
+                                    <a href="indexView.php" class="btn btn-carrinho"> Comprar mais </a>
+                                        <br>
+                                    <a href="logica-deletaProdCarrinho.php?id_carrinho=<?php echo $lista_carrinho['id_carrinho'];?>" class="btn btn-remover" style="color:tomate"> <i class="fas fa-trash-alt"></i> Remover Item </a>
                                 </div>
                             </div>
                         </div>

@@ -10,7 +10,6 @@ $listaTamanho = listaTamanho($conexao);
 $listaCor = listaCor($conexao);
 //logica-selecionaProduto.php
 $dado = selecionaProduto($conexao);
-
 ?>
 <!DOCTYPE html>
 <html lang="br">
@@ -29,27 +28,7 @@ $dado = selecionaProduto($conexao);
 </head>
 
 <body>
-    <!--NAV SUPERIOR-->
-    <nav id="navSuperior">
-        <div class="container d-flex justify-content-between ">
-            <div class="list-login ">
-                <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
-            </div>
-            <div class="list-botoes d-none d-md-block d-lg-block">
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
-            </div>
-            <ul class="list-inline list-login">
-                <li class="list-inline-item">
-                    <!-- <a href="logoutAdm.php"> <i class="far fa-user"></i> Trocar </a> -->
-                    <a href="logoutAdm.php"> <i class="fas fa-sign-out-alt"></i> Sair </a>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
+    <?php include "header-painel-admView.php"; ?>
 
     <div id="background-cadastro-adm">
         <div class="container">
@@ -61,10 +40,12 @@ $dado = selecionaProduto($conexao);
                             <label for="txtid_produto"> Cod </label>
                             <input type="text" class="form-control" name="txtid_produto" value='<?php echo $dado['id_produto']; ?>'>
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-10">
                             <label for="txtnome_produto"> Nome do Produto </label>
                             <input class="form-control" type="text" name="txtnome_produto" value='<?php echo $dado['nome_produto']; ?>'>
                         </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="txtdescricao_produto"> Descrição do Produto </label>
                             <input class="form-control" type="text" name="txtdescricao_produto" value='<?php echo $dado['descricao_produto']; ?>'>
@@ -95,7 +76,7 @@ $dado = selecionaProduto($conexao);
                                     <!--Comparação entre as duas ID - da tabela produto e tabela categoria-->
                                     <?php if ($dado['id_tamanho'] == $tamanho['id_tamanho']) { ?>
                                         <!--Ele seleciona e traz a opção cadastrada no banco-->
-                                        <option value='<?php echo $tamanho['id_tamanho'] ?>'><?php echo $tamanho['tamanho'] ?> </option>
+                                        <option selected value='<?php echo $tamanho['id_tamanho'] ?>'><?php echo $tamanho['tamanho'] ?> </option>
                                     <?php } else { ?>
                                         <!--Ele não seleciona nenhuma opção, e traz os dados cadastrados no banco-->
                                         <option value='<?php echo $tamanho['id_tamanho'] ?>'><?php echo $tamanho['tamanho'] ?> </option>
@@ -113,7 +94,7 @@ $dado = selecionaProduto($conexao);
                                     <!--Comparação entre as duas ID - da tabela produto e tabela categoria-->
                                     <?php if ($dado['id_cor'] == $cor['id_cor']) { ?>
                                         <!--Ele seleciona e traz a opção cadastrada no banco-->
-                                        <option value='<?php echo $cor['id_cor'] ?>'><?php echo $cor['nome_cor'] ?> </option>
+                                        <option selected value='<?php echo $cor['id_cor'] ?>'><?php echo $cor['nome_cor'] ?> </option>
                                     <?php } else { ?>
                                         <!--Ele não seleciona nenhuma opção, e traz os dados cadastrados no banco-->
                                         <option value='<?php echo $cor['id_cor'] ?>'><?php echo $cor['nome_cor'] ?> </option>
@@ -133,11 +114,11 @@ $dado = selecionaProduto($conexao);
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="txtimagem_produto"> Adicionar Imagem</label>
-                            <input type="file" class="form-control" name="txtimagem_produto" value='<?php echo $dado['imagem_produto']; ?>'>
+                            <input type="file" class="form-control" name="txtimagem_produto" selected value='<?php echo $dado['imagem_produto']; ?>'>
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">
-                        <a href="painel-admView.php" class="btn btn-voltar">VOLTAR</a>
+                        <a href="painel-admView.php" class="btn btn-voltar">CANCELAR</a>
                         <button class="btn btn-entrar" type="submit" value="alterar">ALTERAR</button>
                     </div>
 

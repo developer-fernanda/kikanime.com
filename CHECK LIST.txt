@@ -1,0 +1,16 @@
+- INDEX
+*nome do cliente para exibir somente quando logado
+*Categorias
+*Pesquisa
+
+- SOBRE
+*Configuração
+
+
+- CARRINHO 
+*Finalizar venda
+* Item venda
+
+- CONTATO 
+*Enviar formulário
+

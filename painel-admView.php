@@ -34,26 +34,8 @@ $listaProduto = dadosProduto($conexao);
 </head>
 
 <body id="background-lista">
-    <!--NAV SUPERIOR-->
-    <nav id="navSuperior">
-        <div class="container d-flex justify-content-between ">
-            <div class="list-login ">
-                <img src="assets/img/logo/logo-kik.png" alt="logo" class="logo-kik">
-            </div>
-            <div class="list-botoes d-none d-md-block d-lg-block">
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"> <i class="fab fa-discord"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://instagram.com/kik.mein?utm_medium=copy_link"> <i class="fab fa-instagram"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://www.facebook.com/henrique.viola.507"><i class="fab fa-facebook-square"></i> </a>
-                <a target="_blank" class="btn btn-redes-sociais" href="https://wa.me/551199683-0998"> <i class="fab fa-whatsapp"></i> </a>
-            </div>
-            <ul class="list-inline list-login">
-                <li class="list-inline-item">
-                    <a href="logoutAdm.php"> <i class="far fa-user"></i> Trocar </a>
-                    <a href="logoutAdm.php"> <i class="fas fa-sign-out-alt"></i> Sair </a>
-                </li>
-           </ul>
-        </div>
-    </nav>
+
+    <?php include('header-painel-admView.php'); ?>
 
     <div class="container" id="container-lista">
         <div class="row">
@@ -62,11 +44,11 @@ $listaProduto = dadosProduto($conexao);
                 <h4> Painel de Produto </h4>
                 <div class="d-flex justify-content-between">
                     <div class="nome-adm">
-                    <!--NOME DO ADMINISTRADOR-->
+                        <!--NOME DO ADMINISTRADOR-->
                         <h4>Olá <?php echo pegaNomeDoAdministradorLogado(); ?>! </h4>
                     </div>
                     <div id="botoes-lista">
-                       <!--BOTÃO CADASTRO-->
+                        <!--BOTÃO CADASTRO-->
                         <a href="cadastro-produtoView.php" class="btn"><i class="fas fa-plus"></i> Novo </a>
                         <!--BOTÃO ATUALIZAR-->
                         <a href="painel-admView.php" class="btn"> <i class="fas fa-redo-alt"></i></a>
@@ -103,12 +85,12 @@ $listaProduto = dadosProduto($conexao);
                             <td> <?php echo $dado['nome_cor']; ?> </td>
                             <td> <?php echo $dado['preco_produto']; ?> </td>
                             <td>
-                                <img src="assets/img/produto/<?php echo $dado['imagem_produto']; ?>" width='50px' heigth='50px'>
+                                <img src="assets/img/produto/<?php echo $dado['imagem_produto']; ?>" width='50px' heigth='50px' class="img-card">
                             </td>
 
                             <td class="d-flex acao-lista">
                                 <!--Nesta linha, a variavel id_produto está recendo a variavel $dado['id_produto'], que já contém o Id de cada produto-->
-                                 <!-- BOTÃO DE ALTERA -->
+                                <!-- BOTÃO DE ALTERA -->
                                 <a href="altera-produtoView.php?id_produto=<?php echo $dado['id_produto']; ?>" class="btn">
                                     <i class="fas fa-pen"></i> </a>
                                 <!-- BOTÃO DE DELETAR - CHAMA O MODAL -->
@@ -127,7 +109,7 @@ $listaProduto = dadosProduto($conexao);
                                 </div>
                                 <!-- CONTEÚDO MODAL -->
                                 <div class="modal-body">
-                                    <h5 class="text-center"> Deseja realmente excluir este produto? </h5>                                                         
+                                    <h5 class="text-center"> Deseja realmente excluir este produto? </h5>
                                 </div>
                                 <div class="modal-footer">
                                     <div class="d-flex justify-content-between">
@@ -141,10 +123,9 @@ $listaProduto = dadosProduto($conexao);
                     <!-- FIM DO MODAL -->
                 <?php } ?>
             </table>
-           <!--Fim da Tabela-->
+            <!--Fim da Tabela-->
         </div>
     </div>
-
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

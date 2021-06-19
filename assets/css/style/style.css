@@ -1,6 +1,6 @@
-/***************************
-********* BODY *********
-***************************/
+/*******************************************************************************************************************
+BODY ***************************************************************************************************************
+*******************************************************************************************************************/
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -8,9 +8,9 @@ body {
 }
 
 
-/***************************
-*******NAVS GERAL *********
-***************************/
+/*******************************************************************************************************************
+NAV GERAL **********************************************************************************************************
+*******************************************************************************************************************/
 
 
 /* MENU HAMBURGUER */
@@ -25,6 +25,24 @@ body {
 
 .navbar-toggler-icon {
     color: #FCB040;
+}
+
+
+/* MENU HAMBURGUER - FUNDO */
+
+@media only screen and (max-width: 992px) {
+    #conteudoNavbarSuportado {
+        background: #1B1B1B !important;
+        height: 280px;
+        color: #FCB040;
+    }
+    /*MENU HAMBURGUER*/
+    .navbar-toggler,
+    .navbar-toggler-icon {
+        padding: 2px 5px;
+        font-size: 25px;
+        border: none;
+    }
 }
 
 
@@ -46,9 +64,9 @@ body {
 }
 
 
-/***************************
-*******NAV SUPERIOR*********
-***************************/
+/*******************************************************************************************************************
+NAV SUPERIOR *******************************************************************************************************
+*******************************************************************************************************************/
 
 
 /*NAV SUPERIOR - LOGO */
@@ -64,7 +82,7 @@ body {
 
 .btn-redes-sociais {
     color: #FCB040;
-    background-color: #1B1B1B;
+    /* background-color: #1B1B1B; */
     font-size: 20px;
 }
 
@@ -73,7 +91,7 @@ body {
 }
 
 .list-botoes {
-    margin-left: 150px;
+    margin-left: 300px;
 }
 
 
@@ -99,29 +117,6 @@ body {
 }
 
 
-/*NAV SUPERIOR - INPUT DE PESQUISA */
-
-#input-pesquisa>input {
-    background-color: #1B1B1B;
-    color: #FCB040;
-    border: solid 1px #FCB040;
-}
-
-
-/*NAV SUPERIOR - BOTÃO IR */
-
-.btn-ir {
-    color: #1B1B1B;
-    background-color: #FCB040;
-    margin-top: -4px;
-}
-
-.btn-ir:hover {
-    color: #1B1B1B;
-    background-color: white;
-}
-
-
 /* NAV INFERIOR - MENU ITENS - ALINHAMENTO */
 
 #navList {
@@ -129,9 +124,9 @@ body {
 }
 
 
-/***************************
-*******NAV INFERIOR*********
-***************************/
+/*******************************************************************************************************************
+NAV INFEIROR *******************************************************************************************************
+*******************************************************************************************************************/
 
 
 /*NAV INFERIOR - MENU ITENS COM LINKS */
@@ -145,6 +140,10 @@ body {
 #navList>li>a:hover {
     color: white;
     border-bottom: solid 2px white;
+}
+
+#navList {
+    margin-right: 130px;
 }
 
 
@@ -162,9 +161,9 @@ body {
 }
 
 
-/***************************
-*****CAROUSEL PRINCIPAL*****
-***************************/
+/*******************************************************************************************************************
+CAROUSEL ***********************************************************************************************************
+*******************************************************************************************************************/
 
 
 /*CAROUSEL IMAGEM */
@@ -214,23 +213,9 @@ body {
 }
 
 
-/***************************
-***********HOME*************
-***************************/
-
-
-/* CARDS BOTÃO*/
-
-.btn-carrinho {
-    color: #1B1B1B;
-    background-color: #FCB040;
-    margin-top: 10px;
-}
-
-.btn-carrinho:hover {
-    color: #1B1B1B;
-    background-color: white;
-}
+/*******************************************************************************************************************
+*TELAS DE LOGIN E ERRO **********************************************************************************************
+*******************************************************************************************************************/
 
 
 /* ERRO CLIENTE - ALINHAMENTO*/
@@ -241,13 +226,13 @@ body {
 }
 
 
-/***BORDA E ESPAÇAMENTO*********
-*****LOGIN DE CLIENTE***********
-*****CADASTRO DE CLIENTE********
-*****LOGIN DO ADMINISTRADOR***** 
-*****CADASTRO DE PRODUTO********
-*****ERRO DE ADMINISTRADOR******
-*****ERRO DE CLIENTE **********/
+/*BORDA E ESPAÇAMENTO*******
+*LOGIN DE CLIENTE***********
+*CADASTRO DE CLIENTE********
+*LOGIN DO ADMINISTRADOR***** 
+*CADASTRO DE PRODUTO********
+*ERRO DE ADMINISTRADOR******
+*ERRO DE CLIENTE **********/
 
 #form-login-cliente,
 #form-cadastro-cliente,
@@ -266,17 +251,17 @@ body {
 #background-login-adm,
 #background-cadastro-adm,
 #background-cadastro-adm {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 
-/****TITULO H6 *****************
-*****LOGIN DE CLIENTE***********
-*****CADASTRO DE CLIENTE********
-*****LOGIN DO ADMINISTRADOR***** 
-*****CADASTRO DE PRODUTO********
-*****ERRO DE ADMINISTRADOR******
-*****ERRO DE CLIENTE **********/
+/*TITULO H6 *************
+*LOGIN DE CLIENTE********
+*CADASTRO DE CLIENTE*****
+*LOGIN DO ADMINISTRADOR** 
+*CADASTRO DE PRODUTO*****
+**ERRO DE ADMINISTRADOR**
+*ERRO DE CLIENTE ********/
 
 #form-login-cliente>h6,
 #form-cadastro-cliente>h6,
@@ -291,11 +276,11 @@ body {
 }
 
 
-/****LABEL**********************
-*****LOGIN DE CLIENTE***********
-*****CADASTRO DE CLIENTE********
-*****LOGIN DO ADMINISTRADOR***** 
-*****CADASTRO DE PRODUTO*******/
+/*LABEL*********************
+*LOGIN DE CLIENTE***********
+*CADASTRO DE CLIENTE********
+*LOGIN DO ADMINISTRADOR***** 
+*CADASTRO DE PRODUTO*******/
 
 #form-login-cliente>.form-group>label,
 #form-cadastro-cliente>.form-group>label,
@@ -307,18 +292,11 @@ body {
 }
 
 
-/****COR INTERNA COMBOBOX
-#form-cadastro-produto>.form-row>.form-group>.form-control>option {
-    color: #1B1B1B;
-    background-color: #FCB040;
-} */
-
-
-/****BOTÕES ENTRAR E VOLTAR****
-*****LOGIN DE CLIENTE***********
-*****CADASTRO DE CLIENTE********
-*****LOGIN DO ADMINISTRADOR***** 
-*****CADASTRO DE PRODUTO*******/
+/*BOTÕES ENTRAR E VOLTAR****
+*LOGIN DE CLIENTE***********
+*CADASTRO DE CLIENTE********
+**LOGIN DO ADMINISTRADOR**** 
+*CADASTRO DE PRODUTO********/
 
 .btn-voltar,
 .btn-entrar {
@@ -345,9 +323,80 @@ body {
 }
 
 
-/****************************************
-*** PAINEL ADM - LISTA DE PRODUTOS ******
-*****************************************/
+/*******************************************************************************************************************
+PAINEL ADM VIEW ****************************************************************************************************
+*******************************************************************************************************************/
+
+
+/* PAINEL ADM- TÍTULO - ALINHAMENTO */
+
+#container-lista>.row>.col-md-12>h4 {
+    color: #FCB040;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* PAINEL ADM - MODAL HEADER  */
+
+.modal-header {
+    color: #FCB040;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+
+/* PAINEL ADM - MODAL CONTENT  */
+
+.modal-content {
+    background-color: rgb(37, 35, 35);
+    color: white;
+}
+
+
+/* PAINEL ADM -ALERT DELETES  */
+
+.alert-delete {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* PAINEL ADM - MODAL - BOTÃO DELETAR  */
+
+.btn-deletar {
+    color: #1B1B1B;
+    background: #FCB040;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.btn-deletar:hover {
+    color: #1B1B1B;
+}
+
+
+/* PAINEL ADM - MODAL - BOTÃO SAIR  */
+
+.btn-sair {
+    color: white;
+    background: #1B1B1B;
+    margin-right: 10px;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+.btn-sair:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*******************************************************************************************************************
+PAINEL ADM - CADASTRO DE PRODUTO ***********************************************************************************
+*******************************************************************************************************************/
 
 
 /* CADASTRO DE PRODUTOS - FUNDO*/
@@ -358,18 +407,7 @@ body {
 }
 
 
-/* CADASTRO DE PRODUTOS - TÍTULO E BOTÃO SAIR - ALINHAMENTO */
-
-#container-lista>.row>.col-md-12>h4 {
-    color: #FCB040;
-    margin-top: 70px;
-    margin-bottom: 40px;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-
-/* CADASTRO DE PRODUTOS - BOTÃO DE CADASTRO E DE ATUALIZAR*/
+/* PAINEL ADM - BOTÃO DE INCLUIR CADASTRO E DE ATUALIZAR*/
 
 #botoes-lista>a {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -394,9 +432,9 @@ body {
 }
 
 
-/****************************************
-*** TABELA - CADASTRO DE PRODUTOS *******
-*****************************************/
+/*******************************************************************************************************************
+PAINEL ADM - TABELA ************************************************************************************************
+*******************************************************************************************************************/
 
 .table {
     margin-top: 30px !important;
@@ -443,94 +481,232 @@ body {
 }
 
 
-/* PAINEL ADM -ALERT  */
-
-.alert-delete {
-    display: flex;
-    justify-content: center;
-}
+/*******************************************************************************************************************
+INDEX **************************************************************************************************************
+*******************************************************************************************************************/
 
 
-/* PAINEL ADM - MODAL HEADER  */
-
-.modal-header {
-    color: #FCB040;
-    text-transform: uppercase;
-    margin: auto;
-}
-
-
-/* PAINEL ADM - MODAL CONTENT  */
-
-.modal-content {
-    background-color: rgb(37, 35, 35);
-    color: white;
-}
-
-
-/* PAINEL ADM - BOTÃO DELETAR  */
-
-.btn-deletar {
-    color: #1B1B1B;
-    background: #FCB040;
-    margin-right: 10px;
-    text-decoration: none;
-}
-
-.btn-deletar:hover {
-    color: #1B1B1B;
-}
-
-
-/* PAINEL ADM - BOTÃO SAIR  */
-
-.btn-sair {
-    color: white;
-    background: #1B1B1B;
-    margin-right: 10px;
-    text-decoration: none;
-    border: 1px solid white;
-}
-
-.btn-sair:hover {
-    color: white;
-    text-decoration: none;
-}
-
-
-/****************************************
-***************** INDEX *****************
-*****************************************/
+/*INDEX ESTILO DO CARD*/
 
 .card-listaProdutos {
     border: 1px solid #FCB040;
     background-color: rgb(37, 35, 35);
     color: #FCB040;
-    padding: 30px;
+    padding: 20px;
 }
+
+
+/*INDEX NOME DO PRODUTO*/
 
 .card-listaProdutos>h4 {
     color: white;
 }
 
+.img-card:hover {
+    transform: scale(1.5);
+}
 
-/****************************************
-***************** CARRINHO **************
-*****************************************/
+
+/*INDEX- NOME DO CLIENTE */
+
+@media only screen and (max-width: 1023px) {
+    #nome-cliente>h4 {
+        margin-top: 30px;
+        color: white;
+        text-align: end;
+    }
+}
+
+#nome-cliente>h4 {
+    margin-top: 30px;
+    color: white;
+}
 
 
-/* CARRINHO - H4  */
+/*INDEX- FORM PESQUISA */
+
+#form-pesquisa {
+    margin-top: 30px;
+}
+
+
+/*INDEX- INPUT DE PESQUISA */
+
+#input-pesquisa>input {
+    background-color: #1B1B1B;
+    color: #FCB040;
+    border: solid 1px #FCB040;
+    /* width: 150px; */
+}
+
+
+/*INDEX - BOTÃO IR */
+
+.btn-ir {
+    color: #1B1B1B;
+    background-color: #FCB040;
+    margin-top: -4px;
+}
+
+.btn-ir:hover {
+    color: #1B1B1B;
+    background-color: white;
+}
+
+#contador {
+    text-align: end;
+}
+
+#contador>ul>li>a {
+    color: #FCB040 !important;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#contador>ul>li>a:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+
+/*******************************************************************************************************************
+SOBRE **************************************************************************************************************
+*******************************************************************************************************************/
+
+
+/*ALINHAMENTO*/
+
+#sobre {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+/*TITULO H4*/
+
+#sobre>.col-12>h4 {
+    color: #FCB040;
+    margin-bottom: 70px;
+}
+
+
+/*SOBRE FOTOS */
+
+#sobre>.col-lg-4>.d-flex>img {
+    height: 180px;
+}
+
+
+/*SOBRE NOMES */
+
+#sobre>.col-lg-4>.d-flex>div>h6 {
+    margin: 3px;
+    margin-left: 20px;
+    color: #FCB040;
+}
+
+
+/*SOBRE INFORMAÇÕES*/
+
+#sobre>.col-lg-4>.d-flex>div>p {
+    margin: 3px;
+    margin-left: 20px;
+    color: white;
+    font-size: 14px;
+    text-align: justify;
+}
+
+
+/*SOBRE BOTÕES*/
+
+#sobre>.col-lg-4>.d-flex>div>a {
+    border: 1px solid #FCB040;
+    color: #FCB040;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+#sobre>.col-lg-4>.d-flex>div>a:hover {
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* SOBRE MODAL - REDES SOCIAIS  */
+
+.modal-redes {
+    text-align: center;
+    color: #FCB040;
+}
+
+.modal-redes:hover {
+    color: white;
+}
+
+
+/* SOBRE MODAL - BOTÃO SAIR  */
+
+.btn-modal {
+    border: 1px solid #FCB040;
+    color: #FCB040;
+    background-color: rgb(37, 35, 35) !important;
+    text-decoration: none;
+}
+
+.btn-modal:hover {
+    border: 1px solid white;
+    color: white;
+}
+
+
+/* SOBRE - ESTAMAPAS  */
+
+.img-estampa {
+    width: 250px;
+    margin: auto;
+}
+
+
+/* SOBRE - CARD */
+
+.card-body {
+    border: 1px solid #FCB040;
+    background-color: rgb(37, 35, 35);
+    color: #FCB040;
+    padding: 20px;
+}
+
+
+/* SOBRE - ESTAMAPAS ALINHAMENTO  */
+
+#galeria>.col-lg-4,
+#galeria>.col-md-6 {
+    margin-top: 30px;
+}
+
+
+/*******************************************************************************************************************
+CARRINHO ***********************************************************************************************************
+*******************************************************************************************************************/
+
+
+/* CARRINHO - TITULO DA PAGINA H4  */
 
 #carrinhoCompra>h4 {
-    margin-top: 120px;
+    margin-top: 60px;
     margin-bottom: 40px;
     text-align: center;
     color: white;
 }
 
+
+/* CARRINHO - TOTAL DA COMPRA  */
+
 #carrinhoCompra>h5 {
     color: white;
-    text-align: center;
 }
 
 
@@ -541,18 +717,139 @@ body {
     margin-bottom: 20px;
 }
 
-.listacarrinho>h4,
-.listacarrinho>h2 {
-    margin-top: 50px;
+
+/* CARRINHO - TITULO CARD H5 */
+
+.card-listaProdutos>.d-flex>.col-lg-4>h5 {
     color: white;
 }
 
 
-/****************************************
-*************** FOOTER ******************
-*****************************************/
+/* CARRINHO - BOTÃO ADD CARRINHO*/
+
+.btn-carrinho {
+    color: #1B1B1B;
+    background-color: #FCB040;
+    margin-top: 10px;
+}
+
+.btn-carrinho:hover {
+    color: #1B1B1B;
+    background-color: white;
+}
+
+
+/* CARRINHO - BOTÃO REMOVE */
+
+.btn-remover {
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-remover:hover {
+    border: 1px solid #FCB040;
+    color: #FCB040;
+}
+
+
+/* CONTATO - TITULO H4 */
+
+#contato>.col-12>h4 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+}
+
+
+/* CONTATO - TITULO H5 */
+
+#contato>.col-12>h5 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+}
+
+
+/* CONTATO - FORMULÁRIO ALINHAMENTO */
+
+#form_contato {
+    /* border: 1px solid #FCB040; */
+    margin-bottom: 20px;
+    padding: 40px;
+    color: #FCB040;
+}
+
+
+/* CONTATO - BOTÃO ENVIAR */
+
+.btn-enviar {
+    color: white !important;
+    border: 1px solid white;
+    margin-top: 10px;
+    background-color: #1B1B1B;
+}
+
+
+/* CONTATO - BOTÃO ENVIAR */
+
+.btn-enviar:hover {
+    border: 1px solid #FCB040;
+    color: #FCB040 !important;
+}
+
+
+/* CONTATO - TITULO H5 */
+
+#contato_informacoes>h5 {
+    margin-top: 40px;
+    color: #FCB040;
+}
+
+#contato_informacoes>p {
+    color: white;
+}
+
+.img-cat {
+    margin-top: 30px;
+}
+
+
+/*******************************************************************************************************************
+FOOTER *************************************************************************************************************
+*******************************************************************************************************************/
 
 footer {
     margin-top: 60px;
     color: white;
+    background-color: rgb(37, 35, 35)!important;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+hr {
+    background-color: white;
+}
+
+#footer_sobre>ul>li {
+    text-align: justify;
+}
+
+#footer_nav>ul>li>a {
+    color: #FCB040;
+}
+
+#footer_nav>ul>li>a:hover {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+
+.alert-danger {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    height: 50px;
+    border-radius: 5px;
 }

@@ -1,3 +1,8 @@
+<?php
+include('conexao.php');
+include('logica-loginCliente.php');
+?>
+
 <!DOCTYPE html>
 <html lang="br">
 
@@ -16,12 +21,12 @@
 </head>
 
 <body>
-    <!--Nav-->
-    <?php include("headerView.php") ?>
+    <!--NAV-->
+    <?php include("header-indexView.php") ?>
 
     <div class="container" id="container-login-cliente">
 
-        <form name="formloginCliente" method="post" action="logica-loginCliente.php">
+        <form name="formloginCliente" method="post">
             <div class="form-row">
                 <div class="offset-lg-3 col-lg-6" id="form-login-cliente">
                     <h6>LOGIN CLIENTE </h6>
@@ -34,8 +39,18 @@
                         <input type="password" class="form-control" name="txtsenha_cliente" placeholder="Sua senha">
                     </div>
                     <div class="d-flex justify-content-around">
-                        <a href="indexView.php" class="btn btn-voltar">VOLTAR</a>
+                        <a href="indexView.php" class="btn btn-voltar">CANCELAR</a>
                         <button class="btn btn-entrar" type="submit" value="entrar">ENTRAR</button>
+                    </div>
+                    <br>
+                    <!-- Verifica se existe uma declaração na variável-->
+                    <div class="text-center">
+                        <?php
+                        if ($_POST) {
+                            logacliente($conexao);
+                        }
+
+                        ?>
                     </div>
                 </div>
             </div>

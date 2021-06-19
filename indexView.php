@@ -13,7 +13,36 @@ $nome_cookie = "ip_provisorio";
 setcookie($nome_cookie, $ip_provisorio);
 
 
+$idClienteCookie = $_COOKIE['ip_provisorio'];
+
+
+// Count ele conta(*) os registros do banco
+// As é um recurso que nomeia uma apelido para a função anterior 
+$select_totalCarrinho = "SELECT count(*) AS quantidade  FROM carrinho WHERE cookie_carrinho =  '$idClienteCookie' ";
+
+$resultado_total = mysqli_query($conexao, $select_totalCarrinho);
+$total_carrinho = mysqli_fetch_array($resultado_total);
+
 ?>
+
+<?php
+
+include("conexao.php");
+//Pesquisa de produtos
+$consulta = "SELECT * FROM produto";
+
+//Verifica se o formulário foi submetido
+if (isset($_GET['txtpesquisa'])) {
+    $pesquisa = $_GET['txtpesquisa'];
+    $consulta = "SELECT * FROM produto WHERE nome_produto LIKE '%$pesquisa%'";
+}
+
+// echo $consulta;
+$con = @mysqli_query($conexao, $consulta) or die($mysql->error);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="br">
 
@@ -33,16 +62,43 @@ setcookie($nome_cookie, $ip_provisorio);
 
 <body>
     <!--HEADER-->
-    <?php include("headerView.php") ?>
+    <?php include("header-indexView.php") ?>
     <!--CAROUSEL-->
     <?php include("carouselView.php") ?>
 
     <div class="container">
-        <div class="row">     
-           <?php while ($dado = $listaProduto->fetch_array()) { ?>
+
+        <div class="row">
+            <div class="col-md-6" id="nome-cliente">
+                <h4>Olá <?php echo pegaNomeDoClienteLogado(); ?>! </h4>
+            </div>
+
+            <div class="col-md-6">
+                <form method="get" action="indexView.php" id="form-pesquisa">
+                    <div id="contador">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="carrinhoView.php"> <i class="fas fa-shopping-cart"></i> (<?php echo $total_carrinho['quantidade']; ?>) </a>
+                            </li>
+                            <li class="list-inline-item" id="input-pesquisa">
+                                <input type="text" class="form-control" name="txtpesquisa" aria-describedby="pesquisa" aria-describedby="pesquisa" placeholder=" Pesquisar">
+                            </li>
+                            <li class="list-inline-item">
+                                <button type="submit" class="btn btn-ir"><i class="fas fa-search"></i> </button>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <?php while ($dado = $listaProduto->fetch_array()) { ?>
                 <div class="col-lg-4 col-md-6 mt-4">
                     <div class="card card-listaProdutos h-100 text-center shadow">
-                        <p class="text-center"><img src="assets/img/produto/<?php echo $dado['imagem_produto']; ?>" width='250px' heigth='250px'></p>
+                        <p class="text-center"><img src="assets/img/produto/<?php echo $dado['imagem_produto']; ?>" width='150px' heigth='150px' class="img-card"></p>
                         <h4> <?php echo $dado['nome_produto']; ?> </h4>
                         <p> <?php echo $dado['descricao_produto']; ?> </p>
                         <p> Tamanho: <?php echo $dado['tamanho']; ?> </p>
@@ -56,7 +112,7 @@ setcookie($nome_cookie, $ip_provisorio);
         </div>
     </div>
 
-    <?php include('footer.php') ?>
+   <?php include('footer.php') ?> 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
