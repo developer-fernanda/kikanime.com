@@ -24,20 +24,36 @@ function logacliente($conexao)
         Dados incorretos, tente novamente!
         </label>";
     } else {
+
+
         // Criando sessão de cliente
         $_SESSION["email_cliente_logado"] = $email_cliente;
         //recupera o nome do cliente logado
         $nome_cliente = $retorna_cliente['nome_cliente'];
         $_SESSION["nome_cliente_logado"] = $nome_cliente;
         //Verifica e direciona para o painel de produto
-?>
-        <script>
-            window.location.href = "indexView.php";
-        </script>
-<?php
-        // echo " <label class='alert alert-danger'>    
-        // Usuário Logado com sucesso!
-        // </label>";
+
+        // Atualizando coluna 'idCliente' do carrinho com o id do cliente que está logado
+        $ip_usuario = $_COOKIE['ip_provisorio'];
+        $idCliente = $retorna_cliente['id_cliente'];
+
+        $update = "UPDATE carrinho SET id_cliente = $idCliente WHERE cookie_carrinho = '$ip_usuario'";
+
+        $resultado_update = @mysqli_query($conexao, $update);
+
+        if($resultado_update == true) {
+            
+            $update = "UPDATE carrinho SET cookie_carrinho = null WHERE id_cliente = $idCliente";
+
+            $resultado_update = @mysqli_query($conexao, $update);
+
+            echo '<script>
+                    window.location.href = "indexView.php";
+                </script>';
+        } else {
+            echo 'Não foi possível completar o seu login. Tente novamente mais tarde.';
+        }
+
     }
 }
 
@@ -54,7 +70,7 @@ function verificaSeClienteEstaLogado()
 
 function pegaEmailDoclienteLogado()
 {
-    return $_SESSION["email_cliente_logado"];
+return $_SESSION["email_cliente_logado"];
 }
 
 function pegaNomeDoClienteLogado()

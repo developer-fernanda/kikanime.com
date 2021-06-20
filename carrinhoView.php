@@ -1,18 +1,38 @@
 <?php
 include('conexao.php');
 include('logica-loginCliente.php');
+include('logica-cadastroCliente.php');
 
 //recupera o cookie
 $idClienteCookie = $_COOKIE['ip_provisorio'];
 
-//seleciona os dados no carrinho 
-$select_carrinho = "SELECT * FROM carrinho 
-INNER JOIN produto ON produto.id_produto = carrinho.id_produto
-INNER JOIN tamanho ON produto.id_tamanho = tamanho.id_tamanho  
-INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
-INNER JOIN cor ON produto.id_cor = cor.id_cor WHERE cookie_carrinho =  '$idClienteCookie'";
+$select_carrinho="";    
+
+if (!isset($_SESSION["email_cliente_logado"])) {
+
+    //seleciona os dados no carrinho 
+    $select_carrinho = "SELECT * FROM carrinho 
+    INNER JOIN produto ON produto.id_produto = carrinho.id_produto
+    INNER JOIN tamanho ON produto.id_tamanho = tamanho.id_tamanho  
+    INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
+    INNER JOIN cor ON produto.id_cor = cor.id_cor WHERE cookie_carrinho =  '$idClienteCookie'";
+} else {
+    $email =  $_SESSION["email_cliente_logado"];
+
+    $cliente = obtemClientePorEmail($conexao, $email);
+
+    $idCliente = $cliente['id_cliente'];
+    //seleciona os dados no carrinho 
+    $select_carrinho = "SELECT * FROM carrinho 
+    INNER JOIN produto ON produto.id_produto = carrinho.id_produto
+    INNER JOIN tamanho ON produto.id_tamanho = tamanho.id_tamanho  
+    INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
+    INNER JOIN cor ON produto.id_cor = cor.id_cor WHERE id_cliente =  $idCliente";
+}
+
 
 $resultado_select = mysqli_query($conexao, $select_carrinho);
+
 
 
 //seleciona o valor dos produtos do carrinho
@@ -53,7 +73,7 @@ $total_carrinho = mysqli_fetch_assoc($resultado_carrinho);
                 <!--NOME DO CLIENTE-->
                 <div class="d-flex justify-content-between">
                     <div class="nome-cliente">
-                        <h4>Olá, <?php echo pegaNomeDoClienteLogado();?>! </h4>
+                        <h4>Olá, <?php echo pegaNomeDoClienteLogado(); ?>! </h4>
                     </div>
                     <div id="botoes-lista">
                         <!--BOTÃO FINALIZAR-->
@@ -70,7 +90,7 @@ $total_carrinho = mysqli_fetch_assoc($resultado_carrinho);
                     <div class="card card-listaProdutos h-100 text-center shadow">
                         <div class="d-flex">
                             <div class="col-lg-4 ">
-                                <p class="text-center"><img src="assets/img/produto/<?php echo $lista_carrinho['imagem_produto']; ?>" width='100px' heigth='100px' class="img-fluid rounded" ></p>
+                                <p class="text-center"><img src="assets/img/produto/<?php echo $lista_carrinho['imagem_produto']; ?>" width='100px' heigth='100px' class="img-fluid rounded"></p>
                             </div>
                             <div class="col-lg-4 ">
                                 <h5> <?php echo $lista_carrinho['nome_produto']; ?> </h5>
@@ -82,8 +102,8 @@ $total_carrinho = mysqli_fetch_assoc($resultado_carrinho);
                                 <h5> R$ <?php echo $lista_carrinho['preco_produto']; ?> </h5>
                                 <div class="text-center">
                                     <a href="indexView.php" class="btn btn-carrinho"> Comprar mais </a>
-                                        <br>
-                                    <a href="logica-deletaProdCarrinho.php?id_carrinho=<?php echo $lista_carrinho['id_carrinho'];?>" class="btn btn-remover" style="color:tomate"> <i class="fas fa-trash-alt"></i> Remover Item </a>
+                                    <br>
+                                    <a href="logica-deletaProdCarrinho.php?id_carrinho=<?php echo $lista_carrinho['id_carrinho']; ?>" class="btn btn-remover" style="color:tomate"> <i class="fas fa-trash-alt"></i> Remover Item </a>
                                 </div>
                             </div>
                         </div>

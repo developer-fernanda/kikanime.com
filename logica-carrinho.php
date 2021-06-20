@@ -1,5 +1,6 @@
 <?php
 include('conexao.php');
+include('logica-cadastroCliente.php');
 
 // Recuperando o IP 
 $idClienteCookie = $_COOKIE['ip_provisorio'];
@@ -17,18 +18,5 @@ if ($resultado == true) {
     echo 'Você ainda não possui nenhum item cadastrado';
 }
 
-function carrinhoCliente($conexao){
-//Recuperando o carrinho 
-      
-    $idClienteCookie = $_COOKIE['ip_provisorio'];
-
-    $select_carrinho = "SELECT * FROM carrinho WHERE cookie_carrinho='$idClienteCookie' ";
-    
-    $resultado_select =  mysqli_query($conexao, $select_carrinho );
-
-    return $resultado_select;
-
-    
-}
 
 

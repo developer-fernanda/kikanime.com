@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Jun-2021 às 03:37
+-- Tempo de geração: 20-Jun-2021 às 20:42
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.8
 
@@ -60,9 +60,10 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id_carrinho`, `id_produto`, `id_cliente`, `cookie_carrinho`) VALUES
-(2, 4, 0, '192.168.56.1'),
-(7, 2, 0, '192.168.56.1'),
-(8, 11, 0, '192.168.56.1');
+(16, 2, 7, ''),
+(17, 1, 7, ''),
+(18, 4, 5, ''),
+(19, 14, 5, '');
 
 -- --------------------------------------------------------
 
@@ -348,7 +349,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `categoria`

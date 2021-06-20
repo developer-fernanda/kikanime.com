@@ -19,3 +19,13 @@ function cadastraCliente($conexao) {
                 </label>";
     }
 }
+
+function obtemClientePorEmail($conexao, $email) {
+    $selectCliente = "SELECT * FROM cliente WHERE email_cliente = '$email'";
+
+    $resultado_cliente = @mysqli_query($conexao, $selectCliente);
+
+    $cliente = mysqli_fetch_array($resultado_cliente);
+
+    return $cliente;
+}
