@@ -27,7 +27,7 @@ include('logica-cadastroCliente.php');
     <!--NAV-->
     <?php include("header-indexView.php") ?>
 
-    <div class="container" id="container-cadastro-cliente">
+    <div class="container" id="background-cadastro-cliente">
 
         <form name="formcadastroCliente" method="post">
             <div class="form-row">
@@ -56,11 +56,12 @@ include('logica-cadastroCliente.php');
                     }
 
                     ?>
-
                 </div>
             </div>
         </form>
     </div>
+
+    <?php include('footer-clienteView.php') ?> 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

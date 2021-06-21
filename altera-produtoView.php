@@ -121,13 +121,12 @@ $dado = selecionaProduto($conexao);
                         <a href="painel-admView.php" class="btn btn-voltar">CANCELAR</a>
                         <button class="btn btn-entrar" type="submit" value="alterar">ALTERAR</button>
                     </div>
-
-
                 </div>
-
             </form>
         </div>
     </div>
+
+    <?php include('footer-admView.php') ?> 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

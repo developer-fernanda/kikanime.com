@@ -20,7 +20,10 @@ function cadastraCliente($conexao) {
     }
 }
 
-function obtemClientePorEmail($conexao, $email) {
+function obtemClientePorEmail($conexao) {
+
+    $email =  $_SESSION["email_cliente_logado"];
+
     $selectCliente = "SELECT * FROM cliente WHERE email_cliente = '$email'";
 
     $resultado_cliente = @mysqli_query($conexao, $selectCliente);

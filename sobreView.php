@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('conexao.php');
 
 $select_estampa = "SELECT * FROM estampa";
@@ -34,16 +34,17 @@ $estampa = $resultado_select;
     <div class="container">
         <section class="row" id="sobre">
             <div class="col-12 text-center">
-                <h4> GALERIA DE FOTOS </h4>
+                <h4> SOBRE NÓS </h4>
             </div>
             <div class="col-lg-4">
                 <div class="d-flex">
-                    <img src="assets/img/sobre/kik.jpg" class="img-fluid" alt="foto">
+                    <img src="assets/img/sobre/kik.jpeg" class="img-fluid" alt="foto">
                     <div>
                         <h6>Henrique Mesquita </h6>
-                        <p>Kik.Mein</p>
-                        <br>
-                        <p> Digital Graphic Artist, Estudante, 17 anos. </p>
+                        <p> <i class="fas fa-highlighter"></i> Kik.Mein</p>
+                        <p> Digital Graphic Artist </p>
+                        <p> Cursando Técnico em Administração Lorem ipsum dolor sit amet consectetur.</p>
+                        <p> 17 anos</p>
                         <!--BOTÃO CHAMA MODAL-->
                         <a class="btn" data-toggle="modal" data-target="#modal-henrique">Saiba Mais</a>
                         <!--CONTEÚDO MODAL-->
@@ -82,12 +83,13 @@ $estampa = $resultado_select;
 
             <div class="col-lg-4 ">
                 <div class="d-flex">
-                    <img src="assets/img/sobre/nanda.jpg" class="img-fluid" alt="foto">
+                    <img src="assets/img/sobre/nanda.jpeg" class="img-fluid" alt="foto">
                     <div>
                         <h6>Fernanda Ingrid </h6>
-                        <p> Nanda </p>
-                        <br>
-                        <p> Programming Student, 28 anos. </p>
+                        <p> <i class="fas fa-brain"></i> Nanda </p>
+                        <p> Psicóloga</p>
+                        <p> Cursando Técnico em Desenvolvimento de Sistemas </p>
+                        <p> 28 anos</p>
                         <!--BOTÃO CHAMA MODAL-->
                         <a class="btn" data-toggle="modal" data-target="#modal-nanda">Saiba Mais</a>
                         <!--CONTEÚDO MODAL-->
@@ -124,12 +126,13 @@ $estampa = $resultado_select;
             </div>
             <div class="col-lg-4">
                 <div class="d-flex">
-                    <img src="assets/img/sobre/lucia.jpg" class="img-fluid" alt="foto">
+                    <img src="assets/img/sobre/lucia.jpeg" class="img-fluid" alt="foto">
                     <div>
                         <h6>Lucia Helena </h6>
-                        <p> Luh</p>
-                        <br>
-                        <p> Programming Student, 42 anos, mãe do Kik.Mein </p>
+                        <p> <i class="fas fa-heart"></i> Luh. Mãe do Kik.Mein</p>
+                        <p> Empresária, Secretária </p>
+                        <p> Cursando Técnico em Desenvolvimento de Sistemas </p>
+                        <p> 42 anos</p>
                         <!--BOTÃO CHAMA MODAL-->
                         <a class="btn" data-toggle="modal" data-target="#modal-lucia">Saiba Mais</a>
                         <!--CONTEÚDO MODAL-->
@@ -167,19 +170,7 @@ $estampa = $resultado_select;
         </section>
     </div>
 
-    <div class="container">
-        <section class="row" id="galeria">
-            <?php while ($imagem = $estampa->fetch_array()) { ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card-body h-100">
-                        <img src="assets/img/produto/<?php echo $imagem['nome_estampa']; ?>" class="img-estampa">
-                    </div>
-                </div>
-            <?php } ?>
-        </section>
-    </div>
-
-    <?php include('footer.php') ?>
+    <?php include('footer-clienteView.php') ?> 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

@@ -1,4 +1,5 @@
 <?php
+
 function cadastrarProduto($conexao)
 {
   //Essa função cadastra o produto no banco ao ser chamada 
@@ -26,6 +27,35 @@ function cadastrarProduto($conexao)
   }
 }
 
+function dadosProdutosPorCategoria($conexao) {
+  $id_categoria = $_GET['categoria'];
+
+  $consulta = "SELECT * FROM produto
+  INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
+  INNER JOIN tamanho ON produto.id_tamanho = tamanho.id_tamanho 
+  INNER JOIN cor ON produto.id_cor = cor.id_cor
+  WHERE categoria.id_categoria = $id_categoria";
+
+  $listaCategoria = @mysqli_query($conexao, $consulta);
+
+  return $listaCategoria;
+}
+
+function dadosProdutoFiltrados($conexao) {
+  
+  $pesquisa = $_GET['txtpesquisa'];
+
+  $consulta = "SELECT * FROM produto
+  INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
+  INNER JOIN tamanho ON produto.id_tamanho = tamanho.id_tamanho 
+  INNER JOIN cor ON produto.id_cor = cor.id_cor
+  WHERE nome_produto LIKE '%$pesquisa%'";
+
+  $listaProduto = @mysqli_query($conexao, $consulta);
+
+  return $listaProduto;
+}
+
 //Essa função é utilizada para exibir os produtos no painel do adm
 function dadosProduto($conexao)
 {
@@ -33,7 +63,7 @@ function dadosProduto($conexao)
   $select_produto = "SELECT * FROM produto  
       INNER JOIN categoria ON produto.id_categoria = categoria.id_categoria
       INNER JOIN tamanho ON produto.id_tamanho = tamanho.id_tamanho 
-      INNER JOIN cor ON produto.id_cor = cor.id_cor";
+      INNER JOIN cor ON produto.id_cor = cor.id_cor ORDER BY produto.nome_produto" ;
 
   $resultado_select = mysqli_query($conexao, $select_produto);
 

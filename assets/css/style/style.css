@@ -33,8 +33,9 @@ NAV GERAL **********************************************************************
 @media only screen and (max-width: 992px) {
     #conteudoNavbarSuportado {
         background: #1B1B1B !important;
-        height: 280px;
+        height: 200px;
         color: #FCB040;
+        text-align: center;
     }
     /*MENU HAMBURGUER*/
     .navbar-toggler,
@@ -57,7 +58,7 @@ NAV GERAL **********************************************************************
 #navInferior {
     background-color: #1B1B1B;
     color: #FCB040;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     display: flex;
     height: 60px;
     align-items: center;
@@ -214,7 +215,7 @@ CAROUSEL ***********************************************************************
 
 
 /*******************************************************************************************************************
-*TELAS DE LOGIN E ERRO **********************************************************************************************
+*TELAS DE LOGIN E ERRO *********************************************************************************************
 *******************************************************************************************************************/
 
 
@@ -222,11 +223,36 @@ CAROUSEL ***********************************************************************
 
 #background-erro-adm,
 #background-erro-cliente {
-    margin-top: 120px;
+    margin-top: 250px;
 }
 
 
-/*BORDA E ESPAÇAMENTO*******
+/*ALINHAMENTO***************
+*CADASTRO  ADM*************/
+
+#background-cadastro-adm {
+    margin-top: 170px;
+}
+
+
+/*ALINHAMENTO***************
+*LOGIN DO ADMINISTRADOR*****/
+
+#background-login-adm {
+    margin-top: 130px;
+}
+
+
+/*ALINHAMENTO***************
+*CADASTRO E LOGIN CLIENTE***/
+
+#background-login-cliente,
+#background-cadastro-cliente {
+    margin-top: 170px;
+}
+
+
+/*BORDA ********************
 *LOGIN DE CLIENTE***********
 *CADASTRO DE CLIENTE********
 *LOGIN DO ADMINISTRADOR***** 
@@ -240,21 +266,13 @@ CAROUSEL ***********************************************************************
 #form-cadastro-produto,
 #form-erro-adm,
 #form-erro-cliente {
-    margin-top: 40px;
     border: 1px solid #FCB040;
     padding: 70px;
-    /*AJUSTAR DEPOIS DE FAZER O FOOTER*/
     margin-bottom: 50px;
     background-color: #1B1B1B;
 }
 
-#background-login-adm,
-#background-cadastro-adm,
-#background-cadastro-adm {
-    margin-top: 50px;
-}
-
-
+*
 /*TITULO H6 *************
 *LOGIN DE CLIENTE********
 *CADASTRO DE CLIENTE*****
@@ -332,7 +350,7 @@ PAINEL ADM VIEW ****************************************************************
 
 #container-lista>.row>.col-md-12>h4 {
     color: #FCB040;
-    margin-top: 10px;
+    margin-top: 120px;
     margin-bottom: 40px;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -503,7 +521,7 @@ INDEX **************************************************************************
 }
 
 .img-card:hover {
-    transform: scale(1.5);
+    transform: scale(2.3);
 }
 
 
@@ -571,13 +589,10 @@ INDEX **************************************************************************
 
 
 /*******************************************************************************************************************
-SOBRE **************************************************************************************************************
+PORTFÓLIO***********************************************************************************************************
 *******************************************************************************************************************/
 
-
-/*ALINHAMENTO*/
-
-#sobre {
+#portfolio {
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -585,29 +600,90 @@ SOBRE **************************************************************************
 
 /*TITULO H4*/
 
+#portfolio>.col-12>h4 {
+    color: #FCB040;
+    margin-top: 60px;
+}
+
+
+/*TEXTO*/
+
+#portfolio>.col-12>p {
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: justify;
+    font-size: 20px;
+}
+
+
+/* PORTFÓLIO- ESTAMPAS  */
+
+.img-estampa {
+    width: 250px;
+    margin: auto;
+}
+
+
+/* PORTFÓLIO - CARD */
+
+.card-body {
+    border: 1px solid #FCB040;
+    background-color: rgb(37, 35, 35);
+    color: #FCB040;
+    padding: 20px;
+}
+
+
+/* PORTFÓLIO- ESTAMAPAS ALINHAMENTO  */
+
+#galeria>.col-lg-4,
+#galeria>.col-md-6 {
+    margin-top: 30px;
+}
+
+
+/*******************************************************************************************************************
+SOBRE **************************************************************************************************************
+*******************************************************************************************************************/
+
+
+/*ALINHAMENTO*/
+
+#sobre {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+/*TITULO H4*/
+
 #sobre>.col-12>h4 {
     color: #FCB040;
+    margin-top: 100px;
     margin-bottom: 70px;
 }
 
 
-/*SOBRE FOTOS */
+/*SOBRE FOTOS - LG 6 */
 
 #sobre>.col-lg-4>.d-flex>img {
+    margin-top: 30px;
     height: 180px;
+    border-radius: 150px;
 }
 
 
-/*SOBRE NOMES */
+/*SOBRE NOMES - LG 6*/
 
 #sobre>.col-lg-4>.d-flex>div>h6 {
-    margin: 3px;
+    margin-top: 40px;
     margin-left: 20px;
     color: #FCB040;
 }
 
 
-/*SOBRE INFORMAÇÕES*/
+/*SOBRE INFORMAÇÕES - LG 6*/
 
 #sobre>.col-lg-4>.d-flex>div>p {
     margin: 3px;
@@ -618,7 +694,7 @@ SOBRE **************************************************************************
 }
 
 
-/*SOBRE BOTÕES*/
+/*SOBRE BOTÕES - LG 12*/
 
 #sobre>.col-lg-4>.d-flex>div>a {
     border: 1px solid #FCB040;
@@ -662,32 +738,6 @@ SOBRE **************************************************************************
 }
 
 
-/* SOBRE - ESTAMAPAS  */
-
-.img-estampa {
-    width: 250px;
-    margin: auto;
-}
-
-
-/* SOBRE - CARD */
-
-.card-body {
-    border: 1px solid #FCB040;
-    background-color: rgb(37, 35, 35);
-    color: #FCB040;
-    padding: 20px;
-}
-
-
-/* SOBRE - ESTAMAPAS ALINHAMENTO  */
-
-#galeria>.col-lg-4,
-#galeria>.col-md-6 {
-    margin-top: 30px;
-}
-
-
 /*******************************************************************************************************************
 CARRINHO ***********************************************************************************************************
 *******************************************************************************************************************/
@@ -695,24 +745,59 @@ CARRINHO ***********************************************************************
 
 /* CARRINHO - TITULO DA PAGINA H4  */
 
-#carrinhoCompra>h4 {
-    margin-top: 60px;
+#carrinhoCompra>.col-md-12>h4 {
+    margin-top: 160px;
     margin-bottom: 40px;
     text-align: center;
-    color: white;
+    color: #FCB040;
 }
 
 
 /* CARRINHO - TOTAL DA COMPRA  */
 
-#carrinhoCompra>h5 {
+#carrinhoCompra>.col-md-12>h5 {
     color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+
+/* CARRINHO - TOTAL DA COMPRA - TM SM */
+
+@media only screen and (max-width: 1023px) {
+    #carrinhoCompra>.col-md-12>h5 {
+        text-align: end;
+        margin-right: 20px;
+    }
+}
+
+
+/* CARRINHO - BOTÃO CARRINHO ALINHAMENTO  */
+
+#botoes-carrinho {
+    text-align: end !important;
+}
+
+#botoes-carrinho>a {
+    margin-right: 20px;
+}
+
+
+/* CARRINHO - NOME DO CLIENTE - TM SM  */
+
+@media only screen and (max-width: 1023px) {
+    .nome-cliente {
+        margin-right: 20px;
+        color: #FCB040;
+        text-align: end;
+    }
 }
 
 
 /* CARRINHO - NOME DO CLIENTE */
 
 .nome-cliente {
+    margin-left: 20px;
     color: #FCB040;
     margin-bottom: 20px;
 }
@@ -743,7 +828,8 @@ CARRINHO ***********************************************************************
 
 .btn-remover {
     color: white;
-    margin-top: 10px;
+    border: 1px solid white;
+    margin-top: 15px;
 }
 
 .btn-remover:hover {
@@ -752,13 +838,83 @@ CARRINHO ***********************************************************************
 }
 
 
+/*******************************************************************************************************************
+CONFIRMAÇÃO DE COMPRA***********************************************************************************************
+*******************************************************************************************************************/
+
+
+/* CONFIRMAÇÃO - TITULO H4  */
+
+#compra>.col-12>h4 {
+    margin-top: 180px;
+    color: #FCB040;
+    text-align: center;
+}
+
+
+/* CONFIRMAÇÃO - MENSAGEM  */
+
+#compra>.col-12>p {
+    margin-top: 20px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+/* CONFIRMAÇÃO - COLUNAS DE RESUMO DA COMPRA */
+
+#compra>.col-12>.d-flex>.col-md-6 {
+    margin-top: 20px;
+    color: #FCB040;
+    font-size: 20px;
+    text-align: start;
+}
+
+
+/* CONFIRMAÇÃO - CARD */
+
+#informacao>.card {
+    margin-top: 50px;
+}
+
+
+/* CONFIRMAÇÃO - ALINHAMENTO E TAMANHO DA FONTE */
+
+#informacao>.col-lg-6>.card>.d-flex>.col-md-8 {
+    text-align: start;
+    padding: 20px;
+}
+
+#informacao>.col-lg-6>.card>.d-flex>.col-md-8>h5 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+/*******************************************************************************************************************
+MEUS PEDIDOS********************************************************************************************************
+*******************************************************************************************************************/
+
+.card-listaProdutos>.d-flex>.col-lg-1 {
+    color: white;
+    font-size: 70px;
+}
+
+
+/*******************************************************************************************************************
+CONTATO ***********************************************************************************************************
+*******************************************************************************************************************/
+
+
 /* CONTATO - TITULO H4 */
 
 #contato>.col-12>h4 {
-    margin-top: 60px;
+    margin-top: 160px;
     margin-bottom: 40px;
     text-align: center;
-    color: white;
+    color: #FCB040;
 }
 
 

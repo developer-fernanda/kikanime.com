@@ -2,7 +2,7 @@
 include('conexao.php');
 include('logica-loginCliente.php');
 include('logica-cadastroProduto.php');
-$listaProduto = dadosProduto($conexao);
+include('logica-cadastroCliente.php');
 
 //Essa função pega o IP do usuário 
 $ip_provisorio = getHostByName(getHostName());
@@ -16,29 +16,42 @@ setcookie($nome_cookie, $ip_provisorio);
 $idClienteCookie = $_COOKIE['ip_provisorio'];
 
 
-// Count ele conta(*) os registros do banco
-// As é um recurso que nomeia uma apelido para a função anterior 
-$select_totalCarrinho = "SELECT count(*) AS quantidade  FROM carrinho WHERE cookie_carrinho =  '$idClienteCookie' ";
+// Se o cliente nao estiver logado, faz tal coisa:
+if (!isset($_SESSION["email_cliente_logado"])) {
+    // Count ele conta(*) os registros do banco
+    // As é um recurso que nomeia uma apelido para a função anterior 
+    $select_totalCarrinho = "SELECT count(*) AS quantidade  FROM carrinho 
+                            WHERE cookie_carrinho =  '$idClienteCookie' ";
+} else {
+
+    $cliente = obtemClientePorEmail($conexao);
+
+    $idCliente = $cliente['id_cliente'];
+
+    $select_totalCarrinho = "SELECT count(*) AS quantidade  FROM carrinho 
+    WHERE id_cliente =  $idCliente";
+}
 
 $resultado_total = mysqli_query($conexao, $select_totalCarrinho);
 $total_carrinho = mysqli_fetch_array($resultado_total);
 
-?>
 
-<?php
+$listaProduto = "";
 
-include("conexao.php");
 //Pesquisa de produtos
-$consulta = "SELECT * FROM produto";
-
 //Verifica se o formulário foi submetido
 if (isset($_GET['txtpesquisa'])) {
-    $pesquisa = $_GET['txtpesquisa'];
-    $consulta = "SELECT * FROM produto WHERE nome_produto LIKE '%$pesquisa%'";
+    $listaProduto = dadosProdutoFiltrados($conexao);
+} 
+else if(isset($_GET['categoria'])) {
+    $listaProduto = dadosProdutosPorCategoria($conexao);
+} 
+else {
+    $listaProduto = dadosProduto($conexao);
 }
 
-// echo $consulta;
-$con = @mysqli_query($conexao, $consulta) or die($mysql->error);
+@mysqli_close($conexao);
+
 
 ?>
 
@@ -70,16 +83,18 @@ $con = @mysqli_query($conexao, $consulta) or die($mysql->error);
 
         <div class="row">
             <div class="col-md-6" id="nome-cliente">
-                <h4>Olá <?php echo pegaNomeDoClienteLogado(); ?>! </h4>
+                <h4>Olá, <?php echo pegaNomeDoClienteLogado(); ?>! </h4>
             </div>
-
+  
             <div class="col-md-6">
                 <form method="get" action="indexView.php" id="form-pesquisa">
                     <div id="contador">
                         <ul class="list-inline">
+                         <!--CONTADOR DO CARRINHO-->
                             <li class="list-inline-item">
                                 <a href="carrinhoView.php"> <i class="fas fa-shopping-cart"></i> (<?php echo $total_carrinho['quantidade']; ?>) </a>
                             </li>
+                             <!--PESQUISA POR NOMES-->
                             <li class="list-inline-item" id="input-pesquisa">
                                 <input type="text" class="form-control" name="txtpesquisa" aria-describedby="pesquisa" aria-describedby="pesquisa" placeholder=" Pesquisar">
                             </li>
@@ -112,7 +127,7 @@ $con = @mysqli_query($conexao, $consulta) or die($mysql->error);
         </div>
     </div>
 
-   <?php include('footer.php') ?> 
+    <?php include('footer-clienteView.php') ?> 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

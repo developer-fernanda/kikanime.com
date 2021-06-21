@@ -35,7 +35,7 @@ $listaProduto = dadosProduto($conexao);
 
 <body id="background-lista">
 
-    <?php include('header-painel-admView.php'); ?>
+    <?php include("header-painel-admView.php"); ?>
 
     <div class="container" id="container-lista">
         <div class="row">
@@ -126,6 +126,8 @@ $listaProduto = dadosProduto($conexao);
             <!--Fim da Tabela-->
         </div>
     </div>
+
+    <?php include('footer-admView.php') ?> 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

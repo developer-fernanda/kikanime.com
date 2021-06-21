@@ -19,8 +19,8 @@ function logaAdm($conexao){
     //recupera o nome do usuário logado
       if($retorna_adm == null){
         echo " <label class='alert alert-danger'>    
-        Dados incorretos, tente novamente!
-        </label>";
+            Dados incorretos, tente novamente!
+            </label>";
     }else{
         // Criando sessão de usuario
         $_SESSION["email_adm_logado"] = $email_adm;

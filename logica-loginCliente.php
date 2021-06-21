@@ -75,7 +75,12 @@ return $_SESSION["email_cliente_logado"];
 
 function pegaNomeDoClienteLogado()
 {
-    return $_SESSION["nome_cliente_logado"];
+    if (!isset($_SESSION["nome_cliente_logado"])) {
+        return "seja bem-vindo";
+    } else {
+        return $_SESSION["nome_cliente_logado"];
+    }
+
 }
 
 

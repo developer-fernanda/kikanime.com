@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Jun-2021 às 20:42
+-- Tempo de geração: 21-Jun-2021 às 23:57
 -- Versão do servidor: 10.4.13-MariaDB
 -- versão do PHP: 7.4.8
 
@@ -52,18 +52,8 @@ CREATE TABLE `carrinho` (
   `id_carrinho` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
-  `cookie_carrinho` varchar(100) NOT NULL
+  `cookie_carrinho` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `carrinho`
---
-
-INSERT INTO `carrinho` (`id_carrinho`, `id_produto`, `id_cliente`, `cookie_carrinho`) VALUES
-(16, 2, 7, ''),
-(17, 1, 7, ''),
-(18, 4, 5, ''),
-(19, 14, 5, '');
 
 -- --------------------------------------------------------
 
@@ -188,12 +178,31 @@ INSERT INTO `estampa` (`id_estampa`, `nome_estampa`) VALUES
 --
 
 CREATE TABLE `item_venda` (
-  `id_item_venda` int(11) NOT NULL,
+  `item_venda` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `id_venda` int(11) NOT NULL,
   `quantidade_item_venda` int(11) NOT NULL,
-  `total_item_venda` decimal(9,2) NOT NULL
+  `total_item_venda` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `item_venda`
+--
+
+INSERT INTO `item_venda` (`item_venda`, `id_produto`, `id_venda`, `quantidade_item_venda`, `total_item_venda`) VALUES
+(1, 3, 1, 1, '60.00'),
+(2, 9, 2, 1, '55.00'),
+(3, 23, 2, 1, '39.90'),
+(4, 3, 3, 1, '60.00'),
+(5, 15, 3, 1, '39.90'),
+(6, 8, 4, 1, '65.90'),
+(7, 14, 5, 1, '49.90'),
+(8, 2, 5, 1, '60.00'),
+(9, 11, 6, 1, '100.00'),
+(10, 24, 6, 1, '39.90'),
+(11, 18, 7, 1, '55.00'),
+(12, 21, 7, 1, '39.90'),
+(13, 12, 7, 1, '100.00');
 
 -- --------------------------------------------------------
 
@@ -222,17 +231,26 @@ INSERT INTO `produto` (`id_produto`, `nome_produto`, `descricao_produto`, `id_ca
 (2, 'Camiseta Feminina', 'Manga curta - 100 % Algodão', 1, 2, 1, 1, '60.00', '2.jpg'),
 (3, 'Camiseta Feminina ', 'Manga curta - 100 % Algodão', 1, 3, 1, 1, '60.00', '3.jpg'),
 (4, 'Camiseta Feminina ', 'Manga curta - 100 % Algodão', 1, 4, 1, 1, '60.00', '4.jpg'),
-(5, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 1, 3, 1, '60.00', '5.jpg'),
-(6, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 2, 3, 1, '60.00', '6.jpg'),
-(7, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 3, 3, 1, '60.00', '8.jpg'),
-(8, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 4, 3, 1, '60.00', '9.jpg'),
+(5, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 1, 3, 1, '65.90', '5.jpg'),
+(6, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 2, 3, 1, '65.90', '23.jpg'),
+(7, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 3, 3, 1, '65.90', '8.jpg'),
+(8, 'Camiseta Masculina ', 'Manga curta - 100 % Algodão', 1, 4, 3, 1, '65.90', '9.jpg'),
 (9, 'Baby Look ', '100 % Algodão', 1, 1, 2, 1, '55.00', '10.jpg'),
 (10, 'Baby Look ', '100 % Algodão', 1, 2, 2, 1, '55.00', '11.jpg'),
-(11, 'Moletom Feminino', '100 % Algodão', 2, 3, 1, 1, '100.00', '12.jpg'),
+(11, 'Moletom Masculino', '100 % Algodão', 2, 3, 1, 1, '100.00', '12.jpg'),
 (12, 'Moletom Masculino ', '100 % Algodão', 2, 4, 1, 1, '100.00', '13.jpg'),
-(13, 'Caneca', 'Cerâmica', 3, 5, 1, 1, '59.90', '18.jpg'),
-(14, 'Almofada', '45cm x 45cm', 4, 5, 3, 1, '59.90', '14.jpg'),
-(15, 'Caneca ', 'Cerâmica', 3, 5, 2, 1, '59.90', '17.jpg');
+(13, 'Caneca', 'Cerâmica', 3, 5, 2, 1, '39.90', '18.jpg'),
+(14, 'Almofada', '45cm x 45cm', 4, 5, 3, 1, '49.90', '14.jpg'),
+(15, 'Caneca ', 'Cerâmica', 3, 5, 1, 1, '39.90', '17.jpg'),
+(16, 'Almofada ', '35cm x 35cm', 4, 5, 2, 1, '39.90', '21.jpg'),
+(17, 'Baby Look ', '100 % Algodão', 1, 3, 2, 1, '55.00', '16.jpg'),
+(18, 'Baby Look ', '100 % Algodão', 1, 4, 2, 1, '55.00', '24.jpg'),
+(19, 'Moletom  Feminino', '100 % Algodão', 2, 1, 1, 1, '100.00', '22.jpg'),
+(20, 'Moletom  Feminino ', '100 % Algodão', 2, 2, 1, 1, '100.00', '6.jpg'),
+(21, 'Caneca ', 'Cerâmica', 3, 5, 3, 1, '39.90', '7.jpg'),
+(22, 'Almofada ', '45cm x 45cm', 4, 5, 1, 1, '49.90', '20.jpg'),
+(23, 'Almofada ', '35cm x 35cm', 4, 5, 1, 1, '39.90', '15.jpg'),
+(24, 'Caneca ', 'Cerâmica', 3, 5, 1, 1, '39.90', '19.jpg');
 
 -- --------------------------------------------------------
 
@@ -266,8 +284,21 @@ CREATE TABLE `venda` (
   `id_venda` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `data_venda` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `total_venda` decimal(9,2) NOT NULL
+  `total_venda` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `venda`
+--
+
+INSERT INTO `venda` (`id_venda`, `id_cliente`, `data_venda`, `total_venda`) VALUES
+(1, 5, '2021-06-21 15:02:12', '60.00'),
+(2, 3, '2021-06-21 18:24:24', '94.90'),
+(3, 3, '2021-06-21 18:35:19', '99.90'),
+(4, 2, '2021-06-21 19:08:19', '65.90'),
+(5, 14, '2021-06-21 19:12:41', '109.90'),
+(6, 16, '2021-06-21 21:14:14', '139.90'),
+(7, 7, '2021-06-21 21:55:48', '194.90');
 
 --
 -- Índices para tabelas despejadas
@@ -315,7 +346,7 @@ ALTER TABLE `estampa`
 -- Índices para tabela `item_venda`
 --
 ALTER TABLE `item_venda`
-  ADD PRIMARY KEY (`id_item_venda`);
+  ADD PRIMARY KEY (`item_venda`);
 
 --
 -- Índices para tabela `produto`
@@ -349,7 +380,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `categoria`
@@ -379,13 +410,13 @@ ALTER TABLE `estampa`
 -- AUTO_INCREMENT de tabela `item_venda`
 --
 ALTER TABLE `item_venda`
-  MODIFY `id_item_venda` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `item_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `tamanho`
@@ -397,7 +428,7 @@ ALTER TABLE `tamanho`
 -- AUTO_INCREMENT de tabela `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

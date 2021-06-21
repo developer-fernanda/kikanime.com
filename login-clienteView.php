@@ -24,7 +24,7 @@ include('logica-loginCliente.php');
     <!--NAV-->
     <?php include("header-indexView.php") ?>
 
-    <div class="container" id="container-login-cliente">
+    <div class="container" id="background-login-cliente">
 
         <form name="formloginCliente" method="post">
             <div class="form-row">
@@ -55,8 +55,9 @@ include('logica-loginCliente.php');
                 </div>
             </div>
         </form>
-
     </div>
+
+    <?php include('footer-clienteView.php') ?> 
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

@@ -21,7 +21,7 @@ $id_carrinho = $_GET['id_carrinho'];
 
 $idClienteCookie = $_COOKIE['ip_provisorio'];
 
-$delete_carrinho = "DELETE FROM carrinho WHERE id_carrinho = '$id_carrinho' AND cookie_carrinho = '$idClienteCookie'";
+$delete_carrinho = "DELETE FROM carrinho WHERE id_carrinho = '$id_carrinho'";
 
 $resultado = mysqli_query($conexao, $delete_carrinho);
 
