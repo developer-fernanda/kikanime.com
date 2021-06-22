@@ -43,7 +43,7 @@ $estampa = $resultado_select;
                         <h6>Henrique Mesquita </h6>
                         <p> <i class="fas fa-highlighter"></i> Kik.Mein</p>
                         <p> Digital Graphic Artist </p>
-                        <p> Cursando Técnico em Administração Lorem ipsum dolor sit amet consectetur.</p>
+                        <p> Cursando Técnico em Administração.</p>
                         <p> 17 anos</p>
                         <!--BOTÃO CHAMA MODAL-->
                         <a class="btn" data-toggle="modal" data-target="#modal-henrique">Saiba Mais</a>

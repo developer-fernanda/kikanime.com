@@ -18,17 +18,19 @@ if (!isset($_SESSION["email_cliente_logado"])) {
     $idCliente = $cliente['id_cliente'];
 
     //seleciona os dados da compra
-    $select_pedidos = "SELECT * FROM venda WHERE id_cliente = $idCliente";
+    $select_pedidos = "SELECT * FROM venda WHERE id_cliente = $idCliente ORDER BY data_venda DESC LIMIT 1 ";
 
     $resultado_select = mysqli_query($conexao, $select_pedidos);
 
     $dado = mysqli_fetch_array($resultado_select);
 
+    $id_venda = $dado['id_venda'];
+
     //seleciona dados do produto
     $select_produto = "SELECT item_venda.id_produto, produto.nome_produto, produto.imagem_produto, produto.descricao_produto, produto.preco_produto, venda.id_venda, venda.data_venda, venda.total_venda FROM venda
                     INNER JOIN item_venda ON venda.id_venda = item_venda.id_venda 
                     INNER JOIN produto ON produto.id_produto = item_venda.id_produto  
-                    WHERE id_cliente = $idCliente";
+                    WHERE venda.id_venda = $id_venda";
 
     $resultado_select_produto = mysqli_query($conexao,  $select_produto);
 }
