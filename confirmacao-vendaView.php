@@ -68,11 +68,11 @@ if (!isset($_SESSION["email_cliente_logado"])) {
                 <p>Parabéns, <?php echo pegaNomeDoClienteLogado(); ?>! Compra efetuada com sucesso! </p>
                 <div class="d-flex">
                     <div class="col-md-6">
-                        <p> Resumo da compra: </p>
+                    <p> Resumo da compra: </p>
                         <p> Número do Pedido: <?php echo  $dado['id_venda']; ?> </p>
                     </div>
                     <div class="col-md-6">
-
+                        
                         <p> Data: <?php echo   $dado['data_venda']; ?> </p>
                         <p> Total: <?php echo   $dado['total_venda']; ?> </p>
                     </div>

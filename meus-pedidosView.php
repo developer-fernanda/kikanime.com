@@ -24,8 +24,6 @@ if (!isset($_SESSION["email_cliente_logado"])) {
 }
 
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="br">
