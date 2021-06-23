@@ -49,8 +49,8 @@ if (!isset($_SESSION["email_cliente_logado"])) {
     <div class="container">
         <div class="row" id="carrinhoCompra">
             <div class="col-md-12">
-                <!--CARRINHO-->
-                <h4> CARRINHO DE COMPRAS </h4>
+                <!--MEUS PEDIDOS-->
+                <h4> MEUS PEDIDOS </h4>
             </div>
             <!--NOME DO CLIENTE-->
             <div class="col-md-6">
