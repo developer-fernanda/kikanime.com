@@ -1,50 +1,46 @@
 <h1> KIK ANIME </h1>
 
-/**** INDEX - VISÃO GERAL *****
+<h3> VISÃO GERAL </h3>
+<ul>
+    <li> HEADER: Links de Redes sociais; </li>
+    <li> CAROUSEL: Imagens responsivas; </li>
+    <li> CATEGORIAS: Filtro por Categorias cadastradas; </li>
+    <li> PORTFÓLIO: Estampas dos produtos cadastradas do banco de dados; </li>
+    <li> CARRINHO: vinculado ao IP do usuário. </li> 
+</ul>
 
-* HEADER: 
-- Links: Redes sociais.
+<h3> FOOTER </h3>
+<ul>
+    <li> CONTATO: envia informações para e-mail cadastrado; </li>
+    <li> SOBRE: Informações gerais e modal; </li>
+    <li> Login do administrador. </li>
+</ul>
 
-* CAROUSEL - Imagens responsivas
+<h3> MODÚLO ADM </h3>
+<ul>
+    <li> LOGIN  DO ADMINISTRADOR; </li>
+    <li> LISTA DE PRODUTOS: produtos listados por ordem alfabética; </li>
+    <li> Cadastro de produtos; </li>
+    <li> Edição de produto; </li>
+    <li> Exclusão de produtos.</li>
+</ul>
 
-* CATEGORIAS: Filtro por Categorias cadastradas
+<h3> MODÚLO CLIENTE </h3>
+<ul>
+    <li> CADASTRO DE CLIENTE; </li>
+    <li> LOGIN DE CLIENTE; </li>
+    <li> HEADER- Após login: Exibe o nome do cliente e Meus pedidos.</li>
+</ul>
 
-* PORTFÓLIO: Estampas dos produtos cadastradas do banco de dados
-
-* CARRINHO: vinculado ao IP do usuário
-
-* FOOTER: 
-- Contato - envia informações para e-mail cadastrado;
-- Sobre - Informações gerais e modal;
-- Login do administrador.
-
-
-********* MODÚLO ADM *********
-
-* LOGIN  DO ADMINISTRADOR
-
-* LISTA DE PRODUTOS - produtos listados por ordem alfabética:
-- Cadastro de produtos;
-- Edição de produto;
-- Exclusão de produtos.
-
-
-****** MODÚLO CLIENTE *********
-
-* CADASTRO DE CLIENTE
-
-* LOGIN DE CLIENTE
-
-* HEADER- Após login:
-- Exibe o nome do cliente;
-- Meus pedidos.
-
-* CARRINHO DO CLIENTE - Após login:
-- Exibe o nome do cliente;
-- Carrinho associado ao Id do cliente. 
-
-* FINALIZAR COMPRAS: 
-- Verificação de login;
-- Resgata informações da compra e do produto.
-
-************************************************************************************************/
+<h3> CARRINHO DO CLIENTE: Após login </h3>
+<ul>
+    <li> Exibe o nome do cliente; </li>
+    <li> Carrinho associado ao Id do cliente. </li>
+</ul>
+ 
+<h3> FINALIZAR COMPRAS: </h3>
+<ul>
+    <li> Verificação de login; </li>
+    <li> Resgata informações da compra e do produto. </li>
+</ul>
+  
