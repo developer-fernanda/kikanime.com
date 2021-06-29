@@ -27,6 +27,7 @@
 
 <h3> MODÚLO CLIENTE </h3>
 <ul>
+    <h4> VISÃO GERAL </h4>
     <li> CADASTRO DE CLIENTE; </li>
     <li> LOGIN DE CLIENTE; </li>
     <li> HEADER: após login, exibe o nome do cliente e meus pedidos.</li>
@@ -42,7 +43,7 @@
     <li> Resgata informações da compra. </li>
 </ul>
   
-<h1> FOTOS DO SISTEMA </h1>
+<h1> IMAGENS DO SISTEMA </h1>
 <h4> INDEX </h4>
 <img src="img-system/1.png">
 <br>
@@ -78,7 +79,7 @@
 <br>
 <h4> PAINEL DE PRODUTOS </h4>
 <img src="img-system/12.png">
-<br
+<br>
 <h4> ALTERAÇÃO DE PRODUTOS </h4>
 <img src="img-system/13.png">
 <br>
