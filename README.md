@@ -1,6 +1,6 @@
-/********* KIK ANIME *********
+<h1> KIK ANIME </h1>
 
-**** INDEX - VISÃO GERAL *****
+/**** INDEX - VISÃO GERAL *****
 
 * HEADER: 
 - Links: Redes sociais.
