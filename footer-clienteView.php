@@ -20,7 +20,7 @@
                     <ul class="list-unstyled ">
                         <h6> SOBRE NÓS</h6>
                         <hr>
-                        <li> Kikanime é um site de vendas de produtos personalizados com diversas estampas autorais do artista Kik.mein, que em suas criações utiliza como inspiração animes, personagens de quadrinho e mangás, atibuindo uma indetidade própria a sua arte.</li>    
+                        <li> Kikanime é um site de vendas de produtos personalizados com diversas estampas autorais do artista Kik.mein, que em suas criações utiliza como inspiração animes, personagens de quadrinho e mangás, atibuindo uma identidade própria a sua arte.</li>    
                     </ul>
                 </nav>
             </div>
