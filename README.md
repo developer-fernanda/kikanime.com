@@ -29,7 +29,7 @@
 <ul>
     <li> CADASTRO DE CLIENTE; </li>
     <li> LOGIN DE CLIENTE; </li>
-    <li> HEADER- Após login: Exibe o nome do cliente e Meus pedidos.</li>
+    <li> HEADER: Após login, exibe o nome do cliente e meus pedidos.</li>
 </ul>
 
 <h3> CARRINHO DO CLIENTE: Após login </h3>
@@ -38,9 +38,10 @@
     <li> Carrinho associado ao Id do cliente. </li>
 </ul>
  
-<h3> FINALIZAR COMPRAS: </h3>
+<h3> FINALIZAR COMPRAS </h3>
 <ul>
     <li> Verificação de login; </li>
     <li> Resgata informações da compra e do produto. </li>
 </ul>
   
+<h1> FOTOS DO SISTEMA </h1>
