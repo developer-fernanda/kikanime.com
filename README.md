@@ -49,7 +49,7 @@
 <h4> FOOTER </h4>
 <img src="img-system/2.png">
 <br>
-h4> LISTA CATEGORIAS </h4>
+<h4> LISTA CATEGORIAS </h4>
 <img src="img-system/3.png">
 <br>
 <h4> PORTFÓLIO </h4>
