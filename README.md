@@ -1,6 +1,6 @@
 <h1> KIK ANIME </h1>
 
-<h3> VISÃO GERAL </h3>
+<h3> VISÃO GERAL</h3>
 <ul>
     <li> HEADER: links de Redes sociais; </li>
     <li> CAROUSEL: imagens responsivas; </li>
