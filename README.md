@@ -33,19 +33,19 @@
     <li> LOGIN DE CLIENTE; </li>
     <li> HEADER: após login, exibe o nome do cliente e meus pedidos.</li> 
     </ul>
-    <ul>
     <li> CARRINHO DO CLIENTE: após login </li>
+    <ul>
     <li> Exibe o nome do cliente; </li>
     <li> Carrinho associado ao Id do cliente; </li>
     <li> Remove produtos do carrinho. </li>
     </ul>
-    <ul>
     <li> FINALIZAR COMPRAS </li>
+    <ul>
     <li> Verificação de login; </li>
     <li> Resgata informações da compra e do produto. </li>
     </ul>
-    <ul>
     <li> MEUS PEDIDOS</li>
+    <ul>
     <li> Exibe compras anteriores; </li>
     <li> Resgata informações da compra. </li>
     </ul>
