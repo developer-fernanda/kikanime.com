@@ -27,10 +27,10 @@
 
 <h3> MODÚLO CLIENTE </h3>
 <ul>
-    <h4> VISÃO GERAL </h4>
-    <li> CADASTRO DE CLIENTE; </li>
+    <li> VISÃO GERAL </li>
+    <li> <li> CADASTRO DE CLIENTE; </li>
     <li> LOGIN DE CLIENTE; </li>
-    <li> HEADER: após login, exibe o nome do cliente e meus pedidos.</li>
+    <li> HEADER: após login, exibe o nome do cliente e meus pedidos.</li> </li>
     <h4> CARRINHO DO CLIENTE: após login </h4>
     <li> Exibe o nome do cliente; </li>
     <li> Carrinho associado ao Id do cliente; </li>
