@@ -44,7 +44,7 @@
     <li> Verificação de login; </li>
     <li> Resgata informações da compra e do produto. </li>
     </ul>
-    <li> MEUS PEDIDOS</li>
+    <li> MEUS PEDIDOS </li>
     <ul>
     <li> Exibe compras anteriores; </li>
     <li> Resgata informações da compra. </li>
