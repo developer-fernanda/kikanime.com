@@ -52,44 +52,42 @@
 </ul>
   
 <h1> IMAGENS DO SISTEMA </h1>
-<h4> INDEX </h4>
+<h4> HOME </h4>
 <img src="img-system/1.png">
 <br>
-<h4> FOOTER </h4>
+<h4> PORTFÓLIO </h4>
 <img src="img-system/2.png">
 <br>
-<h4> LISTA CATEGORIAS </h4>
+<h4> CONTATO </h4>
 <img src="img-system/3.png">
 <br>
-<h4> PORTFÓLIO </h4>
+<h4> SOBRE </h4>
 <img src="img-system/4.png">
 <br>
-<h4> CONTATOS </h4>
+<h4> SOBRE </h4>
 <img src="img-system/5.png">
 <br>
-<h4> SOBRE </h4>
+<h4> LOGIN </h4>
 <img src="img-system/6.png">
 <br>
-<h4> MODAL SOBRE </h4>
+<h4> CARRINHO </h4>
 <img src="img-system/7.png">
 <br>
-<h4> LOGIN CLIENTE </h4>
+<h4> CONFIRMAÇÃO DE COMPRA </h4>
 <img src="img-system/8.png">
 <br
-<h4> CARRINHO CLIENTE </h4>
+<h4> MEUS PEDIDOS </h4>
 <img src="img-system/9.png">
 <br>
-<h4> CONFIRMAÇÃO COMPRA </h4>
+<h4> LOGIN DO ADMINISTRADOR </h4>
 <img src="img-system/10.png">
 <br>
-<h4> MEUS PEDIDOS </h4>
+<h4> PAINEL DE PRODUTOS </h4>
 <img src="img-system/11.png">
 <br>
-<h4> PAINEL DE PRODUTOS </h4>
+<h4> EDITAR PRODUTOS </h4>
 <img src="img-system/12.png">
 <br>
-<h4> ALTERAÇÃO DE PRODUTOS </h4>
+<h4> DELETAR PRODUTOS </h4>
 <img src="img-system/13.png">
-<br>
-<h4> DELETA PRODUTOS </h4>
-<img src="img-system/14.png">
+
